@@ -2,31 +2,31 @@
 
 Adaptive Trial Designs and Master Protocols
 
-1주차 Introduction to Clinical Trial Research
+Week 1: Introduction to Clinical Trial Research
 
-2주차 History of Clinical Trial Research 
+Week 2: History of Clinical Trial Research 
 
-3주차 Characteristics and Principles of Adaptive Trial Designs
+Week 3: Characteristics and Principles of Adaptive Trial Designs
 
-4주차 Common Types of Adaptive Trial Designs
+Week 4: Common Types of Adaptive Trial Designs
 
-5주차 Clnicial Trial Simulations
+Week 5: Clnicial Trial Simulations
 
-6주차 Characteristics and Principles of Master Protocols
+Week 6: Characteristics and Principles of Master Protocols
 
-7주차 Platform Trials
+Week 7: Platform Trials
 
-8주차 Basket Trials and Umbrella Trials
+Week 8: Basket Trials and Umbrella Trials
 
-9주차 Case Studies of Adaptive Trial Designs and Platform Trials
+Week 9: Case Studies of Adaptive Trial Designs and Platform Trials
 
-10주차 Case Studies of Basket Trials and Umbrella Trials
+Week 10: Case Studies of Basket Trials and Umbrella Trials
 
-11주차 Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols
+Week 11: Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols
 
-12주차 Practical Considerations for Adaptive Trial Designs and Master Protocols
+Week 12: Practical Considerations for Adaptive Trial Designs and Master Protocols
 
-13주차 프로토콜 개인 발표
+Week 13: 프로토콜 개인 발표
 
-14주차 프로토콜 개인 발표
+Week 14: 프로토콜 개인 발표
 
