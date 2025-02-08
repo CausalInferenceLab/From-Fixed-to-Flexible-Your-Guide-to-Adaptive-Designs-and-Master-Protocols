@@ -26,7 +26,7 @@ Week 11: Standards and Guidelines for and Common Misconceptions of Adaptive Tria
 
 Week 12: Practical Considerations for Adaptive Trial Designs and Master Protocols
 
-Week 13: 프로토콜 개인 발표
+Week 13: Protocol presentation
 
-Week 14: 프로토콜 개인 발표
+Week 14: Protocol presentation
 
