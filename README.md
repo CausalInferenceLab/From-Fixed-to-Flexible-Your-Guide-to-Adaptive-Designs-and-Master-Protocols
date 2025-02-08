@@ -1,0 +1,1 @@
+# From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols
