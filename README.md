@@ -1,34 +1,3 @@
-# From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols
-
-Adaptive Trial Designs and Master Protocols
-
-Week 1: Introduction to Clinical Trial Research
-
-Week 2: History of Clinical Trial Research 
-
-Week 3: Characteristics and Principles of Adaptive Trial Designs
-
-Week 4: Common Types of Adaptive Trial Designs
-
-Week 5: Clnicial Trial Simulations
-
-Week 6: Characteristics and Principles of Master Protocols
-
-Week 7: Platform Trials
-
-Week 8: Basket Trials and Umbrella Trials
-
-Week 9: Case Studies of Adaptive Trial Designs and Platform Trials
-
-Week 10: Case Studies of Basket Trials and Umbrella Trials
-
-Week 11: Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols
-
-Week 12: Practical Considerations for Adaptive Trial Designs and Master Protocols
-
-Week 13: Protocol presentation
-
-Week 14: Protocol presentation
 
 
 
@@ -36,20 +5,6 @@ Week 14: Protocol presentation
 
 <h1 align="center"> From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols </h1>
 
-<div align="center">
-<a href="https://pseudo-lab.com"><img src="https://img.shields.io/badge/PseudoLab-S10-3776AB" alt="PseudoLab"/></a>
-<a href="https://discord.gg/EPurkHVtp2"><img src="https://img.shields.io/badge/Discord-BF40BF" alt="Discord Community"/></a>
-<a href="https://github.com/Pseudo-Lab/10th-template/stargazers"><img src="https://img.shields.io/github/stars/Pseudo-Lab/10th-template" alt="Stars Badge"/></a>
-<a href="https://github.com/Pseudo-Lab/10th-template/network/members"><img src="https://img.shields.io/github/forks/Pseudo-Lab/10th-template" alt="Forks Badge"/></a>
-<a href="https://github.com/Pseudo-Lab/10th-template/pulls"><img src="https://img.shields.io/github/issues-pr/Pseudo-Lab/10th-template" alt="Pull Requests Badge"/></a>
-<a href="https://github.com/Pseudo-Lab/10th-template/issues"><img src="https://img.shields.io/github/issues/Pseudo-Lab/10th-template" alt="Issues Badge"/></a>
-<a href="https://github.com/Pseudo-Lab/10th-template/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Pseudo-Lab/10th-template?color=2b9348"></a>
-<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fpseudo-lab%2F10th-template&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
-</div>
-<br>
-
-<!-- sheilds: https://shields.io/ -->
-<!-- hits badge: https://hits.seeyoufarm.com/ -->
 
 > Welcome to **From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols**!
 
@@ -86,48 +41,37 @@ Join us in making clinical trials more efficient and responsive!
 | **Member** | SooYoung Kwak | [https://www.linkedin.com/in/systat/](https://www.linkedin.com/in/systat/) | Medical device regulation                  |
 
 
-## 🚀 프로젝트 로드맵 (Project Roadmap)
-```mermaid
-gantt
-    title 2025 AI 프로젝트 여정
-    section 핵심 마일스톤
-    이론 연구       :a1, 2025-09-01, 30d
-    MVP 개발        :a2, after a1, 45d
-    프로덕션 적용    :a3, after a2, 30d
-    section 부가 활동
-    기술 세미나     :2025-10-15, 7d
-    해커톤         :2025-11-20, 3d
-```
+# From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols
 
+Adaptive Trial Designs and Master Protocols
 
-## 🛠️ 우리의 개발 문화 (Our Development Culture)
-**우리의 개발 문화**  
-```python
-class CollaborationFramework:
-    def __init__(self):
-        self.tools = {
-            'communication': 'Discord',
-            'version_control': 'GitHub Projects',
-            'ci/cd': 'GitHub Actions',
-            'docs': 'Github Wiki'
-        }
-    
-    def workflow(self):
-        return """주간 사이클:
-        1️⃣ 월요일: 스프린트 플래닝 (Notion 타임라인 공유)
-        2️⃣ 수요일: 코드 리뷰 세션 (Live Share)
-        3️⃣ 금요일: 데모데이 (실제 적용 사례 발표)"""
-```
+Week 1: Introduction to Clinical Trial Research
 
+Week 2: History of Clinical Trial Research 
 
-## 📈 성과 지표 (Achievement Metrics)
-**2024 주요 KPI**  
-| 지표                     | 목표치 | 현재 달성률 |
-|--------------------------|--------|-------------|
-| 커밋 수                  | 1,200  | 83%         |
-| 이슈 해결률              | 95%    | 89%         | 
-| 기술 블로그 게시물       | 24편   | 15편        |
-| 오픈소스 기여도          | 8회    | 5회         |
+Week 3: Characteristics and Principles of Adaptive Trial Designs
+
+Week 4: Common Types of Adaptive Trial Designs
+
+Week 5: Clnicial Trial Simulations
+
+Week 6: Characteristics and Principles of Master Protocols
+
+Week 7: Platform Trials
+
+Week 8: Basket Trials and Umbrella Trials
+
+Week 9: Case Studies of Adaptive Trial Designs and Platform Trials
+
+Week 10: Case Studies of Basket Trials and Umbrella Trials
+
+Week 11: Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols
+
+Week 12: Practical Considerations for Adaptive Trial Designs and Master Protocols
+
+Week 13: Protocol presentation
+
+Week 14: Protocol presentation
 
 
 ## 💻 주차별 활동 (Activity History)
