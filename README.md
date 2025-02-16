@@ -1,8 +1,4 @@
 
-
-
-# From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols
-
 <h1 align="center"> From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols </h1>
 
 
@@ -112,8 +108,8 @@ OOO is developed as part of Pseudo-Lab's Open Research Initiative. Special thank
 [Pseudo-Lab](https://pseudo-lab.com/) is a non-profit organization focused on advancing machine learning and AI technologies. Our core values of Sharing, Motivation, and Collaborative Joy drive us to create impactful open-source projects. With over 5k+ researchers, we are committed to advancing machine learning and AI technologies.
 
 <h2>Contributors 😃</h2>
-<a href="https://github.com/Pseudo-Lab/10th-template/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Pseudo-Lab/10th-template" />
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" />
 </a>
 <br><br>
 
