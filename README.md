@@ -1,6 +1,20 @@
 
 <h1 align="center"> From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols </h1>
 
+<div align="center">
+<a href="https://pseudo-lab.com"><img src="https://img.shields.io/badge/PseudoLab-S10-3776AB" alt="PseudoLab"/></a>
+<a href="https://discord.gg/EPurkHVtp2"><img src="https://img.shields.io/badge/Discord-BF40BF" alt="Discord Community"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/stargazers"><img src="https://img.shields.io/github/stars/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Stars Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/network/members"><img src="https://img.shields.io/github/forks/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Forks Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/pulls"><img src="https://img.shields.io/github/issues-pr/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues"><img src="https://img.shields.io/github/issues/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Issues Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Pseudo-Lab/10th-template?color=2b9348"></a>
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCausalInferenceLab%2FFrom-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+</div>
+<br>
+
+<!-- sheilds: https://shields.io/ -->
+<!-- hits badge: https://hits.seeyoufarm.com/ -->
 
 > Welcome to **From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols**!
 
