@@ -51,39 +51,6 @@ Join us in making clinical trials more efficient and responsive!
 | **Member** | SooYoung Kwak | [https://www.linkedin.com/in/systat/](https://www.linkedin.com/in/systat/) | Medical device regulation                  |
 
 
-# From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols
-
-Adaptive Trial Designs and Master Protocols
-
-Week 1: Introduction to Clinical Trial Research
-
-Week 2: History of Clinical Trial Research 
-
-Week 3: Characteristics and Principles of Adaptive Trial Designs
-
-Week 4: Common Types of Adaptive Trial Designs
-
-Week 5: Clnicial Trial Simulations
-
-Week 6: 
-
-Week 7: 
-
-Week 8: 
-
-Week 9: 
-
-Week 10: 
-
-Week 11: 
-
-Week 12: 
-
-Week 13: 
-
-Week 14: 
-
-
 ## 💻 Activity History
 
 | Date | Contents | Presenter | 
@@ -114,7 +81,7 @@ Week 14:
 
 ## 🌱 How to Engage
 **Join us in this project!**
-*   **Project Application:** [Link to Application Form - Coming Soon] We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself.
+*   **Project Application:** [Link to Application Form - Coming Soon] We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself. **While this project's working language is English, we welcome participants who are willing to communicate and learn in English.  Please express your willingness to engage in English, both in writing and verbally, during your participation.** We are happy to support your English language journey within the project.
 *   **Community Language:** While the broader PseudoLab community uses Korean, **this project's primary working language is English.** Please submit your application in English. If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.
 
 
