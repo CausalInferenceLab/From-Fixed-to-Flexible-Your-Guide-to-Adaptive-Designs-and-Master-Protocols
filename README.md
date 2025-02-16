@@ -65,57 +65,67 @@ Week 4: Common Types of Adaptive Trial Designs
 
 Week 5: Clnicial Trial Simulations
 
-Week 6: Characteristics and Principles of Master Protocols
+Week 6: 
 
-Week 7: Platform Trials
+Week 7: 
 
-Week 8: Basket Trials and Umbrella Trials
+Week 8: 
 
-Week 9: Case Studies of Adaptive Trial Designs and Platform Trials
+Week 9: 
 
-Week 10: Case Studies of Basket Trials and Umbrella Trials
+Week 10: 
 
-Week 11: Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols
+Week 11: 
 
-Week 12: Practical Considerations for Adaptive Trial Designs and Master Protocols
+Week 12: 
 
-Week 13: Protocol presentation
+Week 13: 
 
-Week 14: Protocol presentation
+Week 14: 
 
 
-## 💻 주차별 활동 (Activity History)
+## 💻 Activity History
 
-| 날짜 | 내용 | 발표자 | 
+| Date | Contents | Presenter | 
 | -------- | -------- | ---- |
-| 2025/02/ | OT       |      |
-| 2025/02/ |  Part 1. | 미정 | 
-| 2025/02/ |  Part 2. | 미정 | 
-| 2025/02/ |  Part 3. | 미정 | 
-| 2025/03/ |  Part 4. | 미정 | 
-| 2025/03/ |  Part 5. | 미정 | 
+| 2025/03/12 | OT       | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)     |
+| 2025/03/19 |  Introduction to Clinical Trial Research |  | 
+| 2025/04/02 |  History of Clinical Trial Research  |  | 
+| 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | 
+| 2025/04/16 |  Common Types of Adaptive Trial Designs |  | 
+| 2025/04/23 |  Clnicial Trial Simulations |  | 
+| 2025/05/07 |  Characteristics and Principles of Master Protocols |  | 
+| 2025/05/14 |  Platform Trials  |  | 
+| 2025/05/21 |  Basket Trials and Umbrella Trials |  | 
+| 2025/05/28 |  Case Studies of Adaptive Trial Designs and Platform Trials |  | 
+| 2025/06/04 |  Case Studies of Basket Trials and Umbrella Trials |  | 
+| 2025/06/11 |  Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols |  | 
+| 2025/06/18 |  Practical Considerations for Adaptive Trial Designs and Master Protocols |  | 
+| 2025/06/25 |  Protocol presentation |  | 
+| 2025/07/02 |  Protocol presentation |  | 
 
 
+## 💡 Learning Resources
+- [Textbook](https://www.amazon.com/Introduction-Adaptive-Designs-Master-Protocols-ebook/dp/B0BW43RGMG/ref=sr_1_1?crid=O659QIIOXHRW&dib=eyJ2IjoiMSJ9.PXzIcNVt4z6Qa2kfl02ZAR_sQxS8Udfnd3cwyMZB8D_GjHj071QN20LucGBJIEps.FNmC4_35kM3XIGDIhisZWmmyH3OqdKzq7lisyD_Fep4&dib_tag=se&keywords=Adaptive+Trial+Designs+and+Master+Protocols&qid=1739711221&sprefix=adaptive+trial+designs+and+master+protocols%2Caps%2C245&sr=8-1): You should buy and study this material.
+- [Guide for writing protocol; SPIRIT 2013 checklist](https://www.spirit-statement.org/wp-content/uploads/2013/01/SPIRIT-Checklist-download-8Jan13.pdf): You should write a clinical trial protocol according to SPIRIT 2013 checklist.
+- [Master protocol of FDA Guidance](https://www.fda.gov/media/120721/download#:~:text=This%20guidance%20provides%20recommendations%20to%20sponsors%20of%20drugs,clinical%20trials%20intended%20to%20simultaneously%20evaluate%20more%20tha)
+- [Adaptive design of FDA guidance; Drug and Biologics](https://www.fda.gov/media/78495/download)
+- [Adaptive design of FDA guidance; Medical devices](https://www.fda.gov/files/medical%20devices/published/Adaptive-Designs-for-Medical-Device-Clinical-Studies---Guidance-for-Industry-and-Food-and-Drug-Administration-Staff.pdf)
 
-## 💡 학습 자원 (Learning Resources)
-**우리가 만든 지식 허브**  
-- [AI Playbook](https://github.com/your-org/ai-playbook): 150+ 페이지의 실전 가이드
-- [MLOps Pipeline Template](https://github.com/your-org/mlops-template): 재사용 가능한 인프라 코드
-- [Failure Journal](https://your-org.github.io/failure-journal): 50+개의 실패 사례 분석 [31][34]
+## 🌱 How to Engage
+**Join us in this project!**
+*   **Project Application:** [Link to Application Form - Coming Soon] We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself.
+*   **Community Language:** While the broader PseudoLab community uses Korean, **this project's primary working language is English.** Please submit your application in English. If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.
 
 
-## 🌱 참여 안내 (How to Engage)
-**팀원으로 참여하시려면 러너 모집 기간에 신청해주세요.**  
-- 링크 (준비중)
-
-**누구나 청강을 통해 모임을 참여하실 수 있습니다.**  
-1. 특별한 신청 없이 정기 모임 시간에 맞추어 디스코드 #Room-GH 채널로 입장
-2. Magical Week 중 행사에 참가
-3. Pseudo Lab 행사에서 만나기
+**You are welcome to observe our sessions.**  
+1. Discord #Room-GH channel
+2. Magical Week (03/26 or 04/30)
+3. Pseudo Lab conference in Seoul, South Korea.
 
 ## Acknowledgement 🙏
 
-OOO is developed as part of Pseudo-Lab's Open Research Initiative. Special thanks to our contributors and the open source community for their valuable insights and contributions.
+**From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols** is developed as part of Pseudo-Lab's Open Research Initiative. Special thanks to our contributors and the open source community for their valuable insights and contributions.
 
 ## About Pseudo Lab 👋🏼</h2>
 
