@@ -83,7 +83,7 @@ Join us in making clinical trials more efficient and responsive!
 **Join us in this project!**
 *   **Project Application:** [Link to Application Form - Coming Soon] We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself. **Since this project's working language is English, we welcome participants who are willing to communicate and learn in English.  In your application form, please express your willingness to engage in English, both in writing and verbally, throughout your participation.  We are happy to support your English language journey within the project.**
 *   **Community Language:** While the broader PseudoLab community uses Korean, **this project's primary working language is English. Please submit your application in English.** If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.
-*   **Meeting Time:** We hold regular project meetings every Wednesday at 21:00 KST (Korean Standard Time) in PseudoLab Discord (online).
+*   **Meeting Time:** We hold regular project meetings every Wednesday at 21:00 KST (Korean Standard Time) in PseudoLab Discord #Room-YL channel (online).
 
 **Observe Our Sessions!**
 You are welcome to observe our sessions and learn more about the project before applying or actively participating. Here are a few ways to do so:
