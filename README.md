@@ -73,11 +73,11 @@ Join us in making clinical trials more efficient and responsive!
 
 
 ## 💡 Learning Resources
-- [Textbook](https://www.amazon.com/Introduction-Adaptive-Designs-Master-Protocols-ebook/dp/B0BW43RGMG/ref=sr_1_1?crid=O659QIIOXHRW&dib=eyJ2IjoiMSJ9.PXzIcNVt4z6Qa2kfl02ZAR_sQxS8Udfnd3cwyMZB8D_GjHj071QN20LucGBJIEps.FNmC4_35kM3XIGDIhisZWmmyH3OqdKzq7lisyD_Fep4&dib_tag=se&keywords=Adaptive+Trial+Designs+and+Master+Protocols&qid=1739711221&sprefix=adaptive+trial+designs+and+master+protocols%2Caps%2C245&sr=8-1): You should buy and study this material.
+- [Main Textbook](https://www.amazon.com/Introduction-Adaptive-Designs-Master-Protocols-ebook/dp/B0BW43RGMG/ref=sr_1_1?crid=O659QIIOXHRW&dib=eyJ2IjoiMSJ9.PXzIcNVt4z6Qa2kfl02ZAR_sQxS8Udfnd3cwyMZB8D_GjHj071QN20LucGBJIEps.FNmC4_35kM3XIGDIhisZWmmyH3OqdKzq7lisyD_Fep4&dib_tag=se&keywords=Adaptive+Trißal+Designs+and+Master+Protocols&qid=1739711221&sprefix=adaptive+trißßßßal+designs+and+master+protocols%2Caps%2C245&sr=8-1): You should buy and study this material.
 - [Guide for writing protocol; SPIRIT 2013 checklist](https://www.spirit-statement.org/wp-content/uploads/2013/01/SPIRIT-Checklist-download-8Jan13.pdf): You should write a clinical trial protocol according to SPIRIT 2013 checklist.
-- [Master protocol of FDA Guidance](https://www.fda.gov/media/120721/download#:~:text=This%20guidance%20provides%20recommendations%20to%20sponsors%20of%20drugs,clinical%20trials%20intended%20to%20simultaneously%20evaluate%20more%20tha)
-- [Adaptive design of FDA guidance; Drug and Biologics](https://www.fda.gov/media/78495/download)
-- [Adaptive design of FDA guidance; Medical devices](https://www.fda.gov/files/medical%20devices/published/Adaptive-Designs-for-Medical-Device-Clinical-Studies---Guidance-for-Industry-and-Food-and-Drug-Administration-Staff.pdf)
+- [Master protocol of FDA Guidance](https://www.fda.gov/media/120721/download#:~:text=This%20guidance%20provides%20recommendations%20to%20sponsors%20of%20drugs,clinical%20trials%20intended%20to%20simultaneously%20evaluate%20more%20tha): Additional
+- [Adaptive design of FDA guidance; Drug and Biologics](https://www.fda.gov/media/78495/download): Additional
+- [Adaptive design of FDA guidance; Medical devices](https://www.fda.gov/files/medical%20devices/published/Adaptive-Designs-for-Medical-Device-Clinical-Studies---Guidance-for-Industry-and-Food-and-Drug-Administration-Staff.pdf): Additional
 
 ## 🌱 How to Engage
 **Join us in this project!**
