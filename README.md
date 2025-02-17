@@ -35,7 +35,7 @@ In this repository, we are studying these powerful methodologies, particularly i
 
 Our journey is to move beyond traditional fixed designs and actively implement adaptive designs and master protocols in clinical research. We aim to:
 
-- **Deepen our understanding**: Thoroughly study the principles and practical applications of adaptive designs and master protocols.
+- **Deepen our understanding**: Thoroughly study the principles and practical applications of adaptive designs and master protocols. **To solidify our learning, participants will have the opportunity to summarize and present study materials to the group, potentially two or three times throughout the project.** This will be a valuable way to deepen your own understanding and share insights with fellow contributors.
 
 - **Create and contribute**: Develop a practical master protocol incorporating adaptive design principles and share it openly with the research community.
 
@@ -82,8 +82,8 @@ Join us in making clinical trials more efficient and responsive!
 ## 🌱 How to Engage
 **Join us in this project!**
 *   **Project Application:** [Link to Application Form - Coming Soon] We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself. **Since this project's working language is English, we welcome participants who are willing to communicate and learn in English.  In your application form, please express your willingness to engage in English, both in writing and verbally, throughout your participation.  We are happy to support your English language journey within the project.**
-*   **Community Language:** While the broader PseudoLab community uses Korean, **this project's primary working language is English.** Please submit your application in English. If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.
-*   **Meeting Time:** We hold regular project meetings every Wednesday at 21:00 KST (Korean Standard Time).
+*   **Community Language:** While the broader PseudoLab community uses Korean, **this project's primary working language is English. Please submit your application in English.** If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.
+*   **Meeting Time:** We hold regular project meetings every Wednesday at 21:00 KST (Korean Standard Time) in PseudoLab Discord (online).
 
 **Observe Our Sessions!**
 You are welcome to observe our sessions and learn more about the project before applying or actively participating. Here are a few ways to do so:
