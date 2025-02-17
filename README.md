@@ -56,7 +56,7 @@ Join us in making clinical trials more efficient and responsive!
 | Date | Contents | Presenter | 
 | -------- | -------- | ---- |
 | 2025/03/12 | OT       | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)     |
-| 2025/03/19 |  Introduction to Clinical Trial Research |  | 
+| 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | 
 | 2025/04/02 |  History of Clinical Trial Research  |  | 
 | 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | 
 | 2025/04/16 |  Common Types of Adaptive Trial Designs |  | 
