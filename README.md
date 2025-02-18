@@ -57,12 +57,12 @@ Join us in making clinical trials more efficient and responsive!
 | -------- | -------- | ---- |
 | 2025/03/12 | OT       | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)     |
 | 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | 
-| 2025/03/24-03/30 |  Magical Week |  | 
+| 2025/03/24-2025/03/30 |  Magical Week 1 |  | 
 | 2025/04/02 |  History of Clinical Trial Research  |  | 
 | 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | 
 | 2025/04/16 |  Common Types of Adaptive Trial Designs |  | 
 | 2025/04/23 |  Clnicial Trial Simulations |  | 
-| 2025/04/28-05/03 |  Magical Week |  | 
+| 2025/04/28-2025/05/03 |  Magical Week 2 |  | 
 | 2025/05/07 |  Characteristics and Principles of Master Protocols |  | 
 | 2025/05/14 |  Platform Trials  |  | 
 | 2025/05/21 |  Basket Trials and Umbrella Trials |  | 
@@ -90,7 +90,7 @@ Join us in making clinical trials more efficient and responsive!
 **Observe Our Sessions!**
 You are welcome to observe our sessions and learn more about the project before applying or actively participating. Here are a few ways to do so:
 1.  **Discord (Weekly Meetings):** Join our Discord channel `#Room-YB` every Wednesday at 21:00 KST to listen in on our regular project meetings.
-2.  **Magical Week Event:** We will be hosting a special "Magical Week" event related to the project. You can observe or attend on either **March 26th or April 30th** (dates to be confirmed - please check for updates).
+2.  **Magical Week Events:** We will be hosting special "Magical Week" events related to the project. You can observe or attend during either Magical Week 1 (March 24-30) or Magical Week 2 (April 28-May 3) (Please check for updates for each event).
 3.  **Pseudo Lab Conference (Seoul):**  Keep an eye out for opportunities to observe project presentations or sessions at upcoming Pseudo Lab conferences held in Seoul, South Korea. Details will be announced within the community.
 
 
