@@ -96,7 +96,7 @@ You are welcome to observe our sessions and learn more about the project before 
 
 ## 📈 Achievement Metrics
 **2025 Key Performance Indicator (KPI)**  
-| Indicator                     | Aim | Acheive Rate |
+| Indicator                     | Aim | Achievement Status |
 |--------------------------|--------|-------------|
 | Github Star                  | 50  | <a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/stargazers"><img src="https://img.shields.io/github/stars/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Stars Badge"/></a>        |
 | Study Material Summary in Github Pages              | 100%    |     0%     | 
