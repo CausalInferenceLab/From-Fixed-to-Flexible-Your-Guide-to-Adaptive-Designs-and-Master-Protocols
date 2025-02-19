@@ -83,13 +83,13 @@ Join us in making clinical trials more efficient and responsive!
 
 ## 🌱 How to Engage
 **Join us in this project!**
-*   **Project Application:** [Link to Application Form - Coming Soon] We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself. **Since this project's working language is English, we welcome participants who are willing to communicate and learn in English.  In your application form, please express your willingness to engage in English, both in writing and verbally, throughout your participation.  We are happy to support your English language journey within the project.**
+*   **Project Application:** [Link to Application Form](https://pseudo-lab.com/chanrankim/19c963ffa3ee81a2bcacebc7ef2c30d7) We are preparing an application form to help us understand your interests and how you'd like to contribute. More details about the application process will be provided within the application form itself. **Since this project's working language is English, we welcome participants who are willing to communicate and learn in English.  In your application form, please express your willingness to engage in English, both in writing and verbally, throughout your participation.  We are happy to support your English language journey within the project.**
 *   **Community Language:** While the broader PseudoLab community uses Korean, **this project's primary working language is English. Please submit your application in English.** If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.
-*   **Meeting Time:** We hold regular project meetings every Wednesday at 21:00 KST (Korean Standard Time) in [PseudoLab Discord](https://discord.gg/J6nM9W68mF) #Room-YB channel (online).
+*   **Meeting Time:** We hold regular project meetings Wednesday at 21:00 KST (Korean Standard Time) in [PseudoLab Discord](https://discord.gg/J6nM9W68mF) #Room-YB channel (online).
 
 **Observe Our Sessions!**
 You are welcome to observe our sessions and learn more about the project before applying or actively participating. Here are a few ways to do so:
-1.  **Discord (Weekly Meetings):** Join our Discord channel `#Room-YB` every Wednesday at 21:00 KST to listen in on our regular project meetings.
+1.  **Discord (Weekly Meetings):** Join our Discord channel `#Room-YB` Wednesday at 21:00 KST to listen in on our regular project meetings.
 2.  **Magical Week Events:** We will be hosting special "Magical Week" events related to the project. You can observe or attend during either Magical Week 1 (March 24-30) or Magical Week 2 (April 28-May 3) (Please check for updates for each event).
 3.  **Pseudo Lab Conference (Seoul):**  Keep an eye out for opportunities to observe project presentations or sessions at upcoming Pseudo Lab conferences held in Seoul, South Korea. Details will be announced within the community.
 
