@@ -1,0 +1,834 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Introduction to Clinical Trial Research &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/intro_to_clinical_research';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="markdown 예시" href="markdown-example.html" />
+    <link rel="prev" title="🌟 Project Vision" href="../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/issues/new?title=Issue%20on%20page%20%2Fdocs/intro_to_clinical_research.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/intro_to_clinical_research.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction to Clinical Trial Research</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-research">Clinical Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trial">Clinical trial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observational-study">Observational study</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trial-phase">Clinical Trial Phase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization">Randomization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization-techniques">Randomization techniques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equipoise">Equipoise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-group-and-crossover-designs">Parallel Group and Crossover Designs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-arm-and-factorial-designs">Multi-Arm and Factorial Designs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-sample-trial-design">Fixed Sample Trial Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-trial-design">Adaptive Trial Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#master-protocol">Master Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimands">Estimands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-and-statistical-power-determination">Sample Size and Statistical Power Determination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-vs-bayesian-statistics">Frequentist vs Bayesian Statistics</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="introduction-to-clinical-trial-research">
+<h1>Introduction to Clinical Trial Research<a class="headerlink" href="#introduction-to-clinical-trial-research" title="Permalink to this heading">#</a></h1>
+<p>Presenter : <a class="reference external" href="https://www.linkedin.com/in/shstat1729/">Sang Ho Park</a></p>
+<section id="clinical-research">
+<h2>Clinical Research<a class="headerlink" href="#clinical-research" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Basically focuses on human.</p></li>
+<li><p>Two types : Clinical trial / Observational study</p></li>
+</ul>
+</section>
+<section id="clinical-trial">
+<h2>Clinical trial<a class="headerlink" href="#clinical-trial" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Prospective interventional study according to clinical trial protocol</p></li>
+<li><p>Follow over time until specific events occur or follow-up ends</p></li>
+<li><p>Have a potential risk to clinical trial participants.</p></li>
+<li><p>to know whether specific intervention is safe and efficacious.</p></li>
+</ul>
+</section>
+<section id="observational-study">
+<h2>Observational study<a class="headerlink" href="#observational-study" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>may be prospective or retrospective</p></li>
+<li><p>observe participants without assigning treatments according to a protocol</p></li>
+<li><p>Types : Case-control study, cross-sectional study, cohort study</p></li>
+</ul>
+</section>
+<section id="clinical-trial-phase">
+<h2>Clinical Trial Phase<a class="headerlink" href="#clinical-trial-phase" title="Permalink to this heading">#</a></h2>
+<p>Information on specific intervention develops through previous clinical research and non-clinical research (such as cell experiment or animal research). Each clinical trial phase provides evidence about safety and efficacy.</p>
+<p>Phase 1</p>
+<ul class="simple">
+<li><p>Research question focuses primarily on safety</p></li>
+<li><p>to determine dose range and to figure out pharmacokinetics (about body absorption) and pharmacodynamics (about body reaction)</p></li>
+</ul>
+<p>Phase 2 (or exploratory study)</p>
+<ul class="simple">
+<li><p>Research question focuses on safety and efficacy</p></li>
+<li><p>phase IIA / phase IIB</p>
+<ul>
+<li><p>phase IIA : proof-of-concept with small numbers of subjects</p></li>
+<li><p>phase IIB : conducted on a large number of participants and determine optimal dose</p></li>
+</ul>
+</li>
+</ul>
+<p>Phase 3 (or confirmatory study)</p>
+<ul class="simple">
+<li><p>conducted in a large population during a longer period</p></li>
+<li><p>to confirm if specific intervention has safety and efficacy to a target population</p></li>
+<li><p>In general, treatment assignment is randomized</p></li>
+<li><p>Compare specific intervention vs placebo (not severe) or standard-of-care treatment (often severe disease)</p></li>
+<li><p>Regulatory approval from FDA or MFDS…</p></li>
+</ul>
+</section>
+<section id="randomization">
+<h2>Randomization<a class="headerlink" href="#randomization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>assigns subjects to treatment group or control group by chance</p></li>
+<li><p>offers similar baseline characteristics between treatment group and control group so that they are comparable</p></li>
+<li><p>removes confounding bias and selection bias</p></li>
+<li><p>Imbalance may occur by chance or a system</p></li>
+</ul>
+</section>
+<section id="randomization-techniques">
+<h2>Randomization techniques<a class="headerlink" href="#randomization-techniques" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Simple randomization</p>
+<ul>
+<li><p>simply assigns treatment groups by chance.</p></li>
+<li><p>may result in imbalance when sample size is small</p></li>
+</ul>
+</li>
+<li><p>Block randomization</p>
+<ul>
+<li><p>using a set of blocks with pre-specified assignments with randomness</p>
+<ul>
+<li><p>Ex) If block size is a four and allocation ratio of two-arm trial is equal, blocks will be AABB, ABAB, ABBA, BAAB, BABA, and BBAA</p></li>
+</ul>
+</li>
+<li><p>can be unblinded by principal investigator if he or she knows the block size</p>
+<ul>
+<li><p>Often use different block sizes such as 4 and 6.</p>
+<ul>
+<li><p>Ex: AABB ABABBA …</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Stratified randomization</p>
+<ul>
+<li><p>randomization utilizing a few prognostic factors</p>
+<ul>
+<li><p>Ex) Sex (Male vs Female). Randomized participants within male and female separately</p></li>
+</ul>
+</li>
+<li><p>The number of stratification variables should be restricted</p>
+<ul>
+<li><p>Ex) The number of strata for Sex (male vs female) and disease severity (mild vs moderate vs severe) is 6 (2 * 3)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="equipoise">
+<h2>Equipoise<a class="headerlink" href="#equipoise" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Genuine uncertainty on clinical trial interventions in terms of relative merits</p></li>
+<li><p>Clinical equipoise</p>
+<ul>
+<li><p>refers to equipoise within medical experts community</p></li>
+</ul>
+</li>
+<li><p>Ethical basis</p>
+<ul>
+<li><p>Clinical trial should be based on clinical equipoise to protect participants’ right.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="parallel-group-and-crossover-designs">
+<h2>Parallel Group and Crossover Designs<a class="headerlink" href="#parallel-group-and-crossover-designs" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Parallel Design</p>
+<ul>
+<li><p>Assigned by randomization and remained until the study ends.</p></li>
+</ul>
+</li>
+<li><p>Crossover Design</p>
+<ul>
+<li><p>randomized to a series of interventions.</p>
+<ul>
+<li><p>Ex) Two-arm crossover trial : AB or BA</p></li>
+</ul>
+</li>
+<li><p>Washout period is needed</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="multi-arm-and-factorial-designs">
+<h2>Multi-Arm and Factorial Designs<a class="headerlink" href="#multi-arm-and-factorial-designs" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Multi-arm designs</p>
+<ul>
+<li><p>more than two arms</p></li>
+<li><p>shared control group or head-to-head comprison</p></li>
+</ul>
+</li>
+<li><p>Factorial designs</p>
+<ul>
+<li><p>a set of combinations of interventions</p></li>
+<li><p>equal to or more than two interventions</p>
+<ul>
+<li><p>Ex) Two set of interventions A, B : A alone group, B alone group, A+B group, no A nor B group</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="fixed-sample-trial-design">
+<h2>Fixed Sample Trial Design<a class="headerlink" href="#fixed-sample-trial-design" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Fixed maximum sample size</p></li>
+<li><p>Fixed a number of interventions</p></li>
+<li><p>Fixed a recruitment period</p>
+<ul>
+<li><p>Trial design, trial conduct according to pre-planned protocol, analysis according to pre-planned statistical analysis plan</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="adaptive-trial-design">
+<h2>Adaptive Trial Design<a class="headerlink" href="#adaptive-trial-design" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Pre-specified adaptive components based on trial data such as allocation ratio, sample size, and eligibility</p></li>
+</ul>
+</section>
+<section id="master-protocol">
+<h2>Master Protocol<a class="headerlink" href="#master-protocol" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>In general, one hypothesis in clinical trial needs one protocol.</p></li>
+<li><p>Master protocol oversees multiple interventional hypotheses. Therefore, we call it as “Master protocol”</p></li>
+<li><p>Type : Platform trial, basket trial, umbrella trial</p></li>
+<li><p>Platform trial</p>
+<ul>
+<li><p>with multiple interventions vs shared a control group</p></li>
+<li><p>with flexibility such as addition of interventions</p></li>
+</ul>
+</li>
+<li><p>Basket trial</p>
+<ul>
+<li><p>multiple disease (different cancers) with a common risk factor (such as EGFR mutation)</p></li>
+<li><p>can be platform trial</p></li>
+</ul>
+</li>
+<li><p>Umbrella trial</p>
+<ul>
+<li><p>multiple targeted therapies (various mutations) in a single disease (such as breast cancer)</p></li>
+<li><p>can be platform trial</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="estimands">
+<h2>Estimands<a class="headerlink" href="#estimands" title="Permalink to this heading">#</a></h2>
+<p>ICH E9 (R1) Statistical Principles for Clinical Trials describes the concept of estimands.</p>
+<ul class="simple">
+<li><p>Scientific question of interest</p></li>
+<li><p>trial objective</p>
+<ul>
+<li><p>The target population</p></li>
+<li><p>Treatment strategy</p></li>
+<li><p>Endpoint (given specific outcome)</p></li>
+<li><p>Strategies for handling intercurrent events</p>
+<ul>
+<li><p>Intercurrent events could hinder the causal estimation of intervention in terms of clinical question of interest</p></li>
+</ul>
+</li>
+<li><p>Summary measurement</p></li>
+</ul>
+</li>
+<li><p>Intention-to-treat (ITT) principle</p>
+<ul>
+<li><p>statistical analysis is performed in accordance to assigned group whether they received actual intervention</p></li>
+</ul>
+</li>
+<li><p>Per-protocol (PP) analysis</p>
+<ul>
+<li><p>Including only data from participants who follow the protocol</p></li>
+<li><p>can occur selection bias</p></li>
+</ul>
+</li>
+<li><p>Strategies for handling intercurrent events</p>
+<ul>
+<li><p>Treatment policy strategy</p>
+<ul>
+<li><p>The intercurrent event is considered as irrelevant. It is related to ITT principle</p></li>
+<li><p>Most common estimand</p></li>
+</ul>
+</li>
+<li><p>Composite strategy</p>
+<ul>
+<li><p>Intercurrent event is integrated in an endpoint. For example, outcome could be defined as no rescue therapy and an improved clinical outcome.</p></li>
+</ul>
+</li>
+<li><p>Hypothetical strategy</p>
+<ul>
+<li><p>Imagine intercurrent event is not occurred so missing imputation is needed when participants have experienced intercurrent event</p></li>
+</ul>
+</li>
+<li><p>While on treatment strategy</p>
+<ul>
+<li><p>analyze participants’ data until intercurrent event occurs</p></li>
+</ul>
+</li>
+<li><p>Principal stratum strategy</p>
+<ul>
+<li><p>Subpopulations of interest are defined on the occurrence of intercurrent events.</p></li>
+<li><p>Analyze subpopulation</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>population-level summary measure</p>
+<ul>
+<li><p>could include odds ratio, risk ratio, or hazard ratio and so on.</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="sample-size-and-statistical-power-determination">
+<h2>Sample Size and Statistical Power Determination<a class="headerlink" href="#sample-size-and-statistical-power-determination" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Statistical Power</p>
+<ul>
+<li><p>When treatment has an effect, statistical power denotes the probability of detecting an effect (informal definition).</p></li>
+<li><p>When alternative hypothesis is true, statistical power denotes the probability of rejecting the null hypothesis (formal definition).</p></li>
+<li><p>Typically setting 80%</p></li>
+</ul>
+</li>
+<li><p>Type 1 error</p>
+<ul>
+<li><p>When null hypothesis is true, type 1 error denotes the probability of rejecting the null hypothesis.</p></li>
+<li><p>The level of significance</p>
+<ul>
+<li><p>accepted level of type 1 error rate in a clinical research</p></li>
+<li><p>In general, typically setting 5%</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Sample size calculation</p>
+<ul>
+<li><p>Utilizing type 1 error, statistical power, effect size, standard deviation, and allocation ratio</p></li>
+<li><p>pre-planned value prior to the start of clinical trial</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="frequentist-vs-bayesian-statistics">
+<h2>Frequentist vs Bayesian Statistics<a class="headerlink" href="#frequentist-vs-bayesian-statistics" title="Permalink to this heading">#</a></h2>
+<p>Frequentist statistics consider the unknown parameter is fixed but  Bayesian statistics consider the unknown parameter is a random variable. Frequentist approach repeats sampling procedures and estimate utilizing sampling uncertainty. Bayesian approach considers unknown parameter follows a probability distribution. Uncertainty is represented by the probability distribution of unknown parameter.</p>
+<p>For example, frequentist approach repeats sampling procedure and gets confidence intervals with 100 numbers. A confidence interval may include or not include unknown parameter because unknown parameter is fixed quantity. 95% confidence interval stands for 95% of confidence intervals will include the unknown parameter.</p>
+<p>However, in bayesian approach, incorporating prior distribution (prior belief on unknown parameter) and likelihood (observed), unknown parameter follows a probability distribution (posterior distribution). We could construct 95% credible interval directly from a probability distribution.</p>
+<p>p-value is the probability of obtaining test results at least as extreme as the result actually observed, under the assumption that the null hypothesis is correct (wikipedia en). When p-value is below 0.05, null hypothesis would be rejected. However, A p-value of 0.01 does not mean that the probability of null hypothesis is true is 0.01.</p>
+<p>![][../pics/firstweek1.png]</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">🌟 Project Vision</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown-example.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">markdown 예시</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-research">Clinical Research</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trial">Clinical trial</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#observational-study">Observational study</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trial-phase">Clinical Trial Phase</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization">Randomization</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization-techniques">Randomization techniques</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#equipoise">Equipoise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parallel-group-and-crossover-designs">Parallel Group and Crossover Designs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-arm-and-factorial-designs">Multi-Arm and Factorial Designs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fixed-sample-trial-design">Fixed Sample Trial Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-trial-design">Adaptive Trial Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#master-protocol">Master Protocol</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimands">Estimands</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-and-statistical-power-determination">Sample Size and Statistical Power Determination</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#frequentist-vs-bayesian-statistics">Frequentist vs Bayesian Statistics</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

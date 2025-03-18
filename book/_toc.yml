@@ -1,0 +1,5 @@
+format: jb-article
+root: intro
+sections:
+- file: docs/intro_to_clinical_research
+- file: docs/markdown-example

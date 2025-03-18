@@ -1,0 +1,37 @@
+title : Bridging causal inference and real-world evidence
+author: PseudoLab
+logo: 'PseudoLab_logo.png'
+
+# Short description about the book
+description: >-
+  A Brief Introduction to Causal Inference and Real-World Evidence Guidelines.
+
+execute:
+  execute_notebooks           : cache
+
+# HTML-specific settings
+html:
+  favicon: 'PseudoLab_logo.png'
+  use_issues_button: true
+  use_repository_button: true
+  home_page_in_navbar         : false
+
+# Interact link settings
+notebook_interface            : "notebook"
+
+# Launch button settings
+repository:
+  url                         : https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines
+  path_to_book                : "mini_book"
+
+binder:
+  binderhub_url               : "https://mybinder.org"
+  text                        : "Launch binder"
+
+# LaTeX settings
+bibtex_bibfiles:
+   - _bibliography/references.bib
+latex:
+  latex_engine                : "xelatex"
+  latex_documents:
+    targetname: book.tex
