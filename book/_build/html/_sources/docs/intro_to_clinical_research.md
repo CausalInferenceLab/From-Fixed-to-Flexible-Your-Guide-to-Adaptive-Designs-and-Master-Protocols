@@ -166,4 +166,4 @@ p-value is the probability of obtaining test results at least as extreme as the 
 
 
 
-![][../pics/firstweek1.png]
+![](../pics/firstweek1.png)
