@@ -1,0 +1,707 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>🌟 Project Vision &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="shortcut icon" href="_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introduction to Clinical Trial Research" href="docs/intro_to_clinical_research.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="docs/intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docs/markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/Bridging-Causal-Inference-and-Real-World-Evidence-A-Study-of-FDA-and-Other-Regulatory-Guidelines/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>🌟 Project Vision</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🌟 Project Vision</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-dynamic-team">🧑 Introduction to Dynamic Team</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-history">💻 Activity History</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-resources">💡 Learning Resources</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-engage">🌱 How to Engage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#achievement-metrics">📈 Achievement Metrics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgement">Acknowledgement 🙏</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-pseudo-lab-h2">About Pseudo Lab 👋🏼</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <h1 align="center"> From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols </h1>
+<div align="center">
+<a href="https://pseudo-lab.com"><img src="https://img.shields.io/badge/PseudoLab-S10-3776AB" alt="PseudoLab"/></a>
+<a href="https://discord.gg/EPurkHVtp2"><img src="https://img.shields.io/badge/Discord-BF40BF" alt="Discord Community"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/stargazers"><img src="https://img.shields.io/github/stars/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Stars Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/network/members"><img src="https://img.shields.io/github/forks/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Forks Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/pulls"><img src="https://img.shields.io/github/issues-pr/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues"><img src="https://img.shields.io/github/issues/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Issues Badge"/></a>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/Pseudo-Lab/10th-template?color=2b9348"></a>
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCausalInferenceLab%2FFrom-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols%2Fhit-counter&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false"/></a>
+</div>
+<br>
+<!-- sheilds: https://shields.io/ -->
+<!-- hits badge: https://hits.seeyoufarm.com/ -->
+<blockquote>
+<div><p>Welcome to <strong>From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols</strong>!</p>
+</div></blockquote>
+<p>This repository is a collaborative space for learning about and working with adaptive designs and master protocols in clinical trials. Our primary goal is to create and present a practical master protocol incorporating adaptive design principles. Traditional clinical trials often follow a fixed design, but modern approaches are embracing flexibility and efficiency.  Here’s a quick introduction to the key concepts:</p>
+<p><strong>Adaptive Designs:</strong> These are clinical trial designs that allow for pre-planned modifications to aspects of the trial based on accumulating data. This could include changes to sample size, treatment arms, or patient populations, all while maintaining the trial’s validity and integrity. Adaptive designs enhance efficiency by allowing trials to respond to emerging data, potentially leading to faster and more conclusive results.</p>
+<p>For instance, one type of adaptation is extending the recruitment period. If the initial recruitment rate is slower than anticipated, an adaptive design might allow for a pre-planned extension of the recruitment timeline to reach the desired sample size, ensuring the study has sufficient power to answer its research question. Other common adaptations include changes to treatment arms (dropping ineffective arms, adding new arms), sample size adjustments based on interim efficacy or futility, and modifications to patient populations based on emerging biomarker data.</p>
+<p><strong>Master Protocols:</strong>  Master protocols are overarching frameworks designed to evaluate multiple treatments or answer multiple questions within a single, streamlined structure. They are particularly valuable for studying various therapies for a single disease (like in oncology) or a single therapy across multiple diseases. <em>Importantly, while master protocols are not inherently adaptive, they frequently utilize adaptive design elements to further enhance their efficiency.</em>  This allows for seamless transitions between different research questions and treatment evaluations within the same protocol.</p>
+<p><strong>Precision Medicine and the Need for Flexibility:</strong> In the era of precision medicine, we are increasingly focused on targeted therapies and understanding how treatments work in specific patient subgroups. This necessitates the ability to conduct simultaneous multi-clinical trials and efficiently adapt our research as we learn. Master protocols with embedded adaptive designs are ideally suited for this landscape, enabling us to investigate multiple treatments concurrently, personalize approaches based on patient characteristics, and accelerate the development of effective therapies.</p>
+<p>In this repository, we are studying these powerful methodologies, particularly in the context of oncology, and aiming to develop and present a practical master protocol incorporating adaptive design principles.  However, our vision extends to exploring the broader application of these flexible approaches across diverse clinical trial settings. Join us as we move from fixed to flexible clinical trial designs!</p>
+<section id="project-vision">
+<h1>🌟 Project Vision<a class="headerlink" href="#project-vision" title="Permalink to this heading">#</a></h1>
+<p>“From Theory to Practice: Embracing Flexible Clinical Trials”</p>
+<p>Our journey is to move beyond traditional fixed designs and actively implement adaptive designs and master protocols in clinical research. We aim to:</p>
+<ul class="simple">
+<li><p><strong>Deepen our understanding</strong>: Thoroughly study the principles and practical applications of adaptive designs and master protocols. <strong>To solidify our learning, participants will have the opportunity to summarize and present study materials to the group, potentially two or three times throughout the project.  To further share our knowledge, your presentation materials, prepared in Markdown format, will be published on our project’s GitHub Pages.  Please ensure your <strong>presentation materials</strong> are original summaries and avoid direct copy-pasting from sources to respect copyright and develop your summarizing skills.</strong> This will be a valuable way to deepen your own understanding, contribute to our shared resource, and share insights with fellow contributors and the wider community.</p></li>
+<li><p><strong>Create and contribute</strong>: Develop a practical master protocol incorporating adaptive design principles and share it openly with the research community.</p></li>
+</ul>
+<p>Join us in making clinical trials more efficient and responsive!</p>
+</section>
+<section id="introduction-to-dynamic-team">
+<h1>🧑 Introduction to Dynamic Team<a class="headerlink" href="#introduction-to-dynamic-team" title="Permalink to this heading">#</a></h1>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Role</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Linkedin</p></th>
+<th class="head"><p>Main interest</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>Project Manager</strong></p></td>
+<td><p>Sang Ho Park</p></td>
+<td><p><a class="reference external" href="https://www.linkedin.com/in/shstat1729/">https://www.linkedin.com/in/shstat1729/</a></p></td>
+<td><p>Observational study, Continuous glucose monitoring, Clinical trial</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>Member</strong></p></td>
+<td><p>SooYoung Kwak</p></td>
+<td><p><a class="reference external" href="https://www.linkedin.com/in/systat/">https://www.linkedin.com/in/systat/</a></p></td>
+<td><p>Medical device regulation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="activity-history">
+<h1>💻 Activity History<a class="headerlink" href="#activity-history" title="Permalink to this heading">#</a></h1>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Date</p></th>
+<th class="head"><p>Contents</p></th>
+<th class="head"><p>Presenter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2025/03/12</p></td>
+<td><p>OT</p></td>
+<td><p><a class="reference external" href="https://www.linkedin.com/in/shstat1729/">Sang Ho Park</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/03/19</p></td>
+<td><p>Introduction to Clinical Trial Research</p></td>
+<td><p><a class="reference external" href="https://www.linkedin.com/in/shstat1729/">Sang Ho Park</a></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/03/24-2025/03/30</p></td>
+<td><p>Magical Week 1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/04/02</p></td>
+<td><p>History of Clinical Trial Research</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/04/09</p></td>
+<td><p>Characteristics and Principles of Adaptive Trial Designs</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/04/16</p></td>
+<td><p>Common Types of Adaptive Trial Designs</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/04/23</p></td>
+<td><p>Clnicial Trial Simulations</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/04/28-2025/05/03</p></td>
+<td><p>Magical Week 2</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/05/07</p></td>
+<td><p>Characteristics and Principles of Master Protocols</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/05/14</p></td>
+<td><p>Platform Trials</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/05/21</p></td>
+<td><p>Basket Trials and Umbrella Trials</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/05/28</p></td>
+<td><p>Case Studies of Adaptive Trial Designs and Platform Trials</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/06/04</p></td>
+<td><p>Case Studies of Basket Trials and Umbrella Trials</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/06/11</p></td>
+<td><p>Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/06/18</p></td>
+<td><p>Practical Considerations for Adaptive Trial Designs and Master Protocols</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>2025/06/25</p></td>
+<td><p>Protocol presentation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>2025/07/02</p></td>
+<td><p>Protocol presentation</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="learning-resources">
+<h1>💡 Learning Resources<a class="headerlink" href="#learning-resources" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.amazon.com/Introduction-Adaptive-Designs-Master-Protocols-ebook/dp/B0BW43RGMG/ref=sr_1_1?crid=O659QIIOXHRW&amp;dib=eyJ2IjoiMSJ9.PXzIcNVt4z6Qa2kfl02ZAR_sQxS8Udfnd3cwyMZB8D_GjHj071QN20LucGBJIEps.FNmC4_35kM3XIGDIhisZWmmyH3OqdKzq7lisyD_Fep4&amp;dib_tag=se&amp;keywords=Adaptive+Trial+Designs+and+Master+Protocols&amp;qid=1739711221&amp;sprefix=adaptive+trial+designs+and+master+protocols%2Caps%2C245&amp;sr=8-1">Main Textbook</a>: You should buy and study this material.</p></li>
+<li><p><a class="reference external" href="https://www.spirit-statement.org/wp-content/uploads/2013/01/SPIRIT-Checklist-download-8Jan13.pdf">Guide for writing protocol; SPIRIT 2013 checklist</a>: You should write a clinical trial protocol according to SPIRIT 2013 checklist.</p></li>
+<li><p><a class="reference external" href="https://www.fda.gov/media/120721/download#:~:text=This%20guidance%20provides%20recommendations%20to%20sponsors%20of%20drugs,clinical%20trials%20intended%20to%20simultaneously%20evaluate%20more%20tha">Master protocol of FDA Guidance</a>: Additional</p></li>
+<li><p><a class="reference external" href="https://www.fda.gov/media/78495/download">Adaptive design of FDA guidance; Drug and Biologics</a>: Additional</p></li>
+<li><p><a class="reference external" href="https://www.fda.gov/files/medical%20devices/published/Adaptive-Designs-for-Medical-Device-Clinical-Studies---Guidance-for-Industry-and-Food-and-Drug-Administration-Staff.pdf">Adaptive design of FDA guidance; Medical devices</a>: Additional</p></li>
+</ul>
+</section>
+<section id="how-to-engage">
+<h1>🌱 How to Engage<a class="headerlink" href="#how-to-engage" title="Permalink to this heading">#</a></h1>
+<p><strong>Join us in this project!</strong></p>
+<ul class="simple">
+<li><p><strong>Project Application:</strong> <a class="reference external" href="https://pseudo-lab.com/chanrankim/19c963ffa3ee81a2bcacebc7ef2c30d7">Link to Application Form</a> We are preparing an application form to help us understand your interests and how you’d like to contribute. More details about the application process will be provided within the application form itself. <strong>Since this project’s working language is English, we welcome participants who are willing to communicate and learn in English.  In your application form, please express your willingness to engage in English, both in writing and verbally, throughout your participation.  We are happy to support your English language journey within the project.</strong></p></li>
+<li><p><strong>Community Language:</strong> While the broader PseudoLab community uses Korean, <strong>this project’s primary working language is English. Please submit your application in English.</strong> If you encounter Korean language content within the application form or in the wider PseudoLab community outside of this project, you can utilize translation tools like Google Translate.</p></li>
+<li><p><strong>Meeting Time:</strong> We hold regular project meetings Wednesday at 21:00 KST (Korean Standard Time) in <a class="reference external" href="https://discord.gg/J6nM9W68mF">PseudoLab Discord</a> #Room-YB channel (online).</p></li>
+</ul>
+<p><strong>Observe Our Sessions!</strong>
+You are welcome to observe our sessions and learn more about the project before applying or actively participating. Here are a few ways to do so:</p>
+<ol class="arabic simple">
+<li><p><strong>Discord (Weekly Meetings):</strong> Join our Discord channel <code class="docutils literal notranslate"><span class="pre">#Room-YB</span></code> Wednesday at 21:00 KST to listen in on our regular project meetings.</p></li>
+<li><p><strong>Magical Week Events:</strong> We will be hosting special “Magical Week” events related to the project. You can observe or attend during either Magical Week 1 (March 24-30) or Magical Week 2 (April 28-May 3) (Please check for updates for each event).</p></li>
+<li><p><strong>Pseudo Lab Conference (Seoul):</strong>  Keep an eye out for opportunities to observe project presentations or sessions at upcoming Pseudo Lab conferences held in Seoul, South Korea. Details will be announced within the community.</p></li>
+</ol>
+</section>
+<section id="achievement-metrics">
+<h1>📈 Achievement Metrics<a class="headerlink" href="#achievement-metrics" title="Permalink to this heading">#</a></h1>
+<p><strong>2025 Key Performance Indicator (KPI)</strong></p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Indicator</p></th>
+<th class="head"><p>Aim</p></th>
+<th class="head"><p>Achievement Status</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Github Star</p></td>
+<td><p>50</p></td>
+<td><p><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/stargazers"><img src="https://img.shields.io/github/stars/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" alt="Stars Badge"/></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>Study Material Summary in Github Pages</p></td>
+<td><p>100%</p></td>
+<td><p>0%</p></td>
+</tr>
+<tr class="row-even"><td><p>Clinical Trial Protocol Share</p></td>
+<td><p>80%</p></td>
+<td><p>0%</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="acknowledgement">
+<h1>Acknowledgement 🙏<a class="headerlink" href="#acknowledgement" title="Permalink to this heading">#</a></h1>
+<p><strong>From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols</strong> is developed as part of Pseudo-Lab’s Open Research Initiative. Special thanks to our contributors and the open source community for their valuable insights and contributions.</p>
+</section>
+<section id="about-pseudo-lab-h2">
+<h1>About Pseudo Lab 👋🏼</h2><a class="headerlink" href="#about-pseudo-lab-h2" title="Permalink to this heading">#</a></h1>
+<p><a class="reference external" href="https://pseudo-lab.com/">Pseudo-Lab</a> is a non-profit organization focused on advancing machine learning and AI technologies. Our core values of Sharing, Motivation, and Collaborative Joy drive us to create impactful open-source projects. With over 5k+ researchers, we are committed to advancing machine learning and AI technologies.</p>
+<h2>Contributors 😃</h2>
+<a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" />
+</a>
+<br><br>
+<h2>License 🗞</h2>
+<p>This project is licensed under the <a class="reference external" href="https://opensource.org/licenses/MIT">MIT License</a>.</p>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="docs/intro_to_clinical_research.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introduction to Clinical Trial Research</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">🌟 Project Vision</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction-to-dynamic-team">🧑 Introduction to Dynamic Team</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#activity-history">💻 Activity History</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#learning-resources">💡 Learning Resources</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#how-to-engage">🌱 How to Engage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#achievement-metrics">📈 Achievement Metrics</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#acknowledgement">Acknowledgement 🙏</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#about-pseudo-lab-h2">About Pseudo Lab 👋🏼</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
