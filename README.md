@@ -53,25 +53,25 @@ Join us in making clinical trials more efficient and responsive!
 
 ## 💻 Activity History
 
-| Date | Contents | Presenter | 
-| -------- | -------- | ---- |
-| 2025/03/12 | OT       | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)     |
-| 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | 
-| 2025/03/24-2025/03/30 |  Magical Week 1 |  | 
-| 2025/04/02 |  History of Clinical Trial Research  |  | 
-| 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | 
-| 2025/04/16 |  Common Types of Adaptive Trial Designs |  | 
-| 2025/04/23 |  Clnicial Trial Simulations |  | 
-| 2025/04/28-2025/05/03 |  Magical Week 2 |  | 
-| 2025/05/07 |  Characteristics and Principles of Master Protocols |  | 
-| 2025/05/14 |  Platform Trials  |  | 
-| 2025/05/21 |  Basket Trials and Umbrella Trials |  | 
-| 2025/05/28 |  Case Studies of Adaptive Trial Designs and Platform Trials |  | 
-| 2025/06/04 |  Case Studies of Basket Trials and Umbrella Trials |  | 
-| 2025/06/11 |  Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols |  | 
-| 2025/06/18 |  Practical Considerations for Adaptive Trial Designs and Master Protocols |  | 
-| 2025/06/25 |  Protocol presentation |  | 
-| 2025/07/02 |  Protocol presentation |  | 
+| Date | Contents | Presenter | Github Pages |
+| -------- | -------- | ---- | ---- |
+| 2025/03/12 | OT       | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)     | |
+| 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | [Intro_to_clinical_trial_research](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/intro_to_clinical_research.html) |
+| 2025/03/24-2025/03/30 |  Magical Week 1 |  | |
+| 2025/04/02 |  History of Clinical Trial Research  | [Christina Obeid](https://github.com/tinnerobeid) |
+| 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | |
+| 2025/04/16 |  Common Types of Adaptive Trial Designs |  | |
+| 2025/04/23 |  Clnicial Trial Simulations |  | | 
+| 2025/04/28-2025/05/03 |  Magical Week 2 |  | | 
+| 2025/05/07 |  Characteristics and Principles of Master Protocols |  | | 
+| 2025/05/14 |  Platform Trials  |  | | 
+| 2025/05/21 |  Basket Trials and Umbrella Trials |  | | 
+| 2025/05/28 |  Case Studies of Adaptive Trial Designs and Platform Trials |  | | 
+| 2025/06/04 |  Case Studies of Basket Trials and Umbrella Trials |  | | 
+| 2025/06/11 |  Standards and Guidelines for and Common Misconceptions of Adaptive Trial Designs and Master Protocols |  | | 
+| 2025/06/18 |  Practical Considerations for Adaptive Trial Designs and Master Protocols |  | | 
+| 2025/06/25 |  Protocol presentation |  | | 
+| 2025/07/02 |  Protocol presentation |  | | 
 
 
 ## 💡 Learning Resources
