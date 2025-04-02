@@ -34,14 +34,15 @@ Presenter: Christina Obeid
 ### Two-stage approach
 -	Adaptive clinical trials
 -	Done by the Bartlett et al. study, Pearl O’Rourke and colleagues
-		-	1st stage –equal assigned to ECMO or standard-of-care at until there were 4 deaths observed in either group. 
-		-	2nd stage - assigned to the more effective treatment until statistical significance was reached.
+	- 1st stage – equal assigned to ECMO or standard-of-care at until there were 4 deaths observed in either group. 
+	- 2nd stage - assigned to the more effective treatment until statistical significance was reached.
 
 ### UK Collaborative
 -	Addressed after criticism of both methods – play-the-winner and two-stage approach 
 -	Randomized clinical trial using equal allocation between ECMO and the standard control with the maximum sample size of 300 newborns, stopped at 180 newborns due to the sufficient outcome
 -	Started from January 1993 to November 1995
-Development of Master Protocols
+
+### Development of Master Protocols
 -	Master protocols – initially developed for oncology
 -	Received support from the US Food and Drug Administration (FDA)
 -	Adaptable to multiple clinical indications and objectives.
