@@ -56,9 +56,9 @@ Join us in making clinical trials more efficient and responsive!
 | Date | Contents | Presenter | Github Pages |
 | -------- | -------- | ---- | ---- |
 | 2025/03/12 | OT       | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)     | |
-| 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | [Intro_to_clinical_trial_research](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/intro_to_clinical_research.html) |
+| 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | [Intro to Clinical Trial Research](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/intro_to_clinical_research.html) |
 | 2025/03/24-2025/03/30 |  Magical Week 1 |  | |
-| 2025/04/02 |  History of Clinical Trial Research  | [Christina Obeid](https://github.com/tinnerobeid) |
+| 2025/04/02 |  History of Clinical Trial Research  | [Christina Obeid](https://github.com/tinnerobeid) | [History of Clinical Trials](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/History_of_clinical_trials.html) |
 | 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | |
 | 2025/04/16 |  Common Types of Adaptive Trial Designs |  | |
 | 2025/04/23 |  Clnicial Trial Simulations |  | | 
