@@ -4,22 +4,22 @@
 
 ### Writer : [Sang Ho Park](https://www.linkedin.com/in/shstat1729/)
 
-![](../pics/slide1.jpg)
+![](../pics/slide1.jpeg)
 
-![](../pics/slide2.jpg)
+![](../pics/slide2.jpeg)
 
-![](../pics/slide3.jpg)
+![](../pics/slide3.jpeg)
 
-![](../pics/slide4.jpg)
+![](../pics/slide4.jpeg)
 
-![](../pics/slide5.jpg)
+![](../pics/slide5.jpeg)
 
-![](../pics/slide6.jpg)
+![](../pics/slide6.jpeg)
 
-![](../pics/slide7.jpg)
+![](../pics/slide7.jpeg)
 
-![](../pics/slide8.jpg)
+![](../pics/slide8.jpeg)
 
-![](../pics/slide9.jpg)
+![](../pics/slide9.jpeg)
 
-![](../pics/slide10.jpg)
+![](../pics/slide10.jpeg)
