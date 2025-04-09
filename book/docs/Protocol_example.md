@@ -59,7 +59,7 @@ We calculated risk scores based on diverse outcomes such as CVD, CKD, MASLD, and
 
 After allocation, we randomized subjects in each group to allocate whether new treatment group or control group (treatment as usual). For CVD group, new treatments are metformin, SGLT2 inhibitor, and statin. For CKD group, new treatments are metformin and SGLT2 inhibitor. For MASLD group, new treatments are metformin and GLP1-RA. For mortality group, new treatments for lowest quartile group are lifestyle modification and metformin. New treatments for 2nd quartile group are metformin and TZD. New treatments for 3rd quartile group are metformin and SGLT2 inhibitor. New treatments for highest quartile group are metformin, GLP1-RA, and basal insulin. For multiple risks group, new treatments are metformin, SGLT2 inhibitor, and GLP1-RA. Every 6 months during follow-up, if secondary endpoint is not met, drug will be added or deleted based on DPTC’s opinion.
  
-![](../pics/protocol_pic2.jpg)
+![](../pics/protocol_pic2.png)
 
 #### Outcomes : 
 Primary endpoint : 
