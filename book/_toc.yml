@@ -3,4 +3,5 @@ root: intro
 sections:
 - file: docs/intro_to_clinical_research
 - file: docs/History_of_clinical_trials
+- file: docs/Characteristics_and_Principles_of_Adaptive_Trial_Designs
 - file: docs/markdown-example
