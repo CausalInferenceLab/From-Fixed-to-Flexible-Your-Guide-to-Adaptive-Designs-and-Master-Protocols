@@ -1,4 +1,4 @@
-## Chapter 3. Characteristics and Principles of Adaptive Trial Designs
+## Characteristics and Principles of Adaptive Trial Designs
 
 ### Presenter : [Jeongsun Park](https://www.linkedin.com/in/sun-park-861272138/)
 
