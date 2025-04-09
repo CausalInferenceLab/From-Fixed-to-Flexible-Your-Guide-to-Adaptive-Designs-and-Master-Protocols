@@ -51,7 +51,7 @@ Join us in making clinical trials more efficient and responsive!
 | **Member** | SooYoung Kwak | [https://www.linkedin.com/in/systat/](https://www.linkedin.com/in/systat/) | Medical device regulation                  |
 | **Member** | Chungsoo Kim | [https://www.linkedin.com/in/chungsoo-kim-42419b175/](https://www.linkedin.com/in/chungsoo-kim-42419b175/) | pharmacoepidemiology, medical informatics, health data science, cardiovascular disease, chronic disease                  |
 | **Member** | Jeongsun Park | [https://www.linkedin.com/in/sun-park-861272138/](https://www.linkedin.com/in/sun-park-861272138/) | |
-| **Member** | [Christina](https://github.com/tinnerobeid) | [https://www.linkedin.com/in/christina-obeid-14158b272/](https://www.linkedin.com/in/christina-obeid-14158b272/)| |
+| **Member** | [Christina Obeid](https://github.com/tinnerobeid) | [https://www.linkedin.com/in/christina-obeid-14158b272/](https://www.linkedin.com/in/christina-obeid-14158b272/)| |
 | **Member** | HeeSeok YOO |  | |
 
 
