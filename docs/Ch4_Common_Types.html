@@ -1,0 +1,730 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Ch 4. Common Types of Adaptive Trial Designs &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Ch4_Common_Types';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Protocol Example - ppt" href="Protocol_example_ppt.html" />
+    <link rel="prev" title="Characteristics and Principles of Adaptive Trial Designs" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History_of_clinical_trials.html">History of Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html">Characteristics and Principles of Adaptive Trial Designs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ch 4. Common Types of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example_ppt.html">Protocol Example - ppt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example.html">Protocol Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues/new?title=Issue%20on%20page%20%2Fdocs/Ch4_Common_Types.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Ch4_Common_Types.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ch 4. Common Types of Adaptive Trial Designs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-chungsoo-kim">Presenter : Chungsoo Kim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-adaptive-trial-designs">Common types of adaptive trial designs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-design">1. Sequential design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-re-assessment-sample-size">2. Sample size re-assessment (Sample Size)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-randomization-allocation">3. Adaptive randomization (Allocation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-covariate-adaptive-randomization">3-1. Minimization (Covariate adaptive randomization)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#response-adaptive-randomzation-outcome-adaptive-randomization">3-2. Response adaptive randomzation (Outcome adaptive randomization)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-enrichment-design-eligibility-criteria">4. Adaptive enrichment design (Eligibility criteria)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seamless-design">5. Seamless Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="ch-4-common-types-of-adaptive-trial-designs">
+<h1>Ch 4. Common Types of Adaptive Trial Designs<a class="headerlink" href="#ch-4-common-types-of-adaptive-trial-designs" title="Permalink to this heading">#</a></h1>
+<section id="presenter-chungsoo-kim">
+<h2>Presenter : Chungsoo Kim<a class="headerlink" href="#presenter-chungsoo-kim" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.linkedin.com/in/chungsoo-kim-42419b175/">LinkedIn</a>, <a class="reference external" href="https://github.com/ChungsooKim">Github</a>, <a class="reference external" href="https://medicine.yale.edu/profile/chungsoo-kim/">Personal page</a></p></li>
+</ul>
+</section>
+<section id="chapter-summary">
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
+<p>This chapter covers several commonly used types of adaptive trial designs, including <strong>sequential designs, sample size re-assessment, adaptive randomisation, minimisation, response-adaptive randomisation, enrichment designs, and seamless designs</strong>.</p>
+<p>Compared to conventional fixed designs, adaptive trials provide greater flexibility but also introduce additional complexities, necessitating <ins>meticulous planning</ins> during the design phase.</p>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<p>Although there are countless variations of adaptive trial designs, they commonly focus on adaptations to key design elements such as <strong>sample size, allocation ratios, and eligibility criteria</strong>. Adaptive designs are often categorized based on the specific aspect of the trial that is subject to modification.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sequential design</p></td>
+<td><p>A group of designs that allows one or more interim analyses to be conducted to stop the trial early. <br>Early stopping can be made based on either superiority and/or futility.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sample size re-assessment</p></td>
+<td><p>Re-estimate the target sample size or number of events during the trial to ensure the desired statistical power.</p></td>
+</tr>
+<tr class="row-even"><td><p>Minimization</p></td>
+<td><p>Adaptive randomization that adjusts allocation based on prespecified covariates to minimize prognostic factor imbalance between comparison groups (‘covariate’ adaptive randomization).</p></td>
+</tr>
+<tr class="row-odd"><td><p>Response adaptive randomisation</p></td>
+<td><p>The allocation ratio can be adjusted over time to favor the study group with the more favorable interim outcome (‘outcome’ adaptive randomization).</p></td>
+</tr>
+<tr class="row-even"><td><p>Adaptive enrichment design</p></td>
+<td><p>Potential modification of trial eligibility for narrower patient groups likely to benefit more from the indicated treatment.</p></td>
+</tr>
+<tr class="row-odd"><td><p>Seamless design</p></td>
+<td><p>Linked two phases of clinical trials, allowing immediate progression from one phase to the next (e.g., Phase IIB/III design).</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="common-types-of-adaptive-trial-designs">
+<h2>Common types of adaptive trial designs<a class="headerlink" href="#common-types-of-adaptive-trial-designs" title="Permalink to this heading">#</a></h2>
+<section id="sequential-design">
+<h3>1. Sequential design<a class="headerlink" href="#sequential-design" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Definition</p>
+<ol class="arabic simple">
+<li><p>A group of trial design that permit early termination based on the results of interim analyses.</p></li>
+<li><p>An interim analysis involves calculating a test statistics (e.g., p-value) and the trial or specific arm is typically stopped if the test statistic reaches a predefined threshold.</p></li>
+<li><p>Early stopping can be made based on factors such as superiority(effective), futility (lack of benefit/sufficient activity), or harm (safety/adverse events).</p></li>
+<li><p>If the assumed treatment effect underestimates the true effect, the planned sample size might exceed what is actually needed. In such cases, interim analyses for superiority can be valuable in reducing the expected sample size of the trial.</p></li>
+</ol>
+</li>
+<li><p>Types</p>
+<ol class="arabic simple">
+<li><p>How error rate should be controlled and what statistical metrics will be used</p></li>
+<li><p>Frequentist approach</p>
+<ol class="arabic simple">
+<li><p>Conditional power refers to the probability that the final result will be statistically significant at a future sample size, based on the data observed at the interim analysis and assuming a specified treatment effect.</p></li>
+<li><p>Pocock, O’Brien-Fleming, and Haybittle-Peto tests</p></li>
+</ol>
+</li>
+<li><p>Bayesian approach</p>
+<ol class="arabic simple">
+<li><p>Bayesian predictive probability refers to a probability of eventual trial success at the future sample size, given the current data and the assumed prior distributions. Less prone to misinterpretation.</p></li>
+<li><p>Bayesian rules has been increasing in recent trial research. <strong>Trial simulation</strong> is performed under the null effect scenario.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>Challenges</p>
+<ol class="arabic simple">
+<li><p>False error rate associated with stopping</p></li>
+<li><p>Bias in the estimate of the treatment effect</p></li>
+<li><p>However, if the size of the burn-in period is adequately large, the bias is generally small.</p></li>
+<li><p>Ethical and efficiency consideration should outweigh the concerns.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="sample-size-re-assessment-sample-size">
+<h3>2. Sample size re-assessment (Sample Size)<a class="headerlink" href="#sample-size-re-assessment-sample-size" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Definition</p>
+<ol class="arabic simple">
+<li><p>Assumptions for sample size calculations are often based on findings from historical studies, but have limitation.</p></li>
+<li><p>Sample size re-assessment is an adaptive trial design approach developed to reduce the risk of false-negative findings resulting from underpowered trials.</p></li>
+<li><p>Conditional power or Bayesian predictive power can be used to determine the sample size.</p></li>
+</ol>
+</li>
+<li><p>Types</p>
+<ol class="arabic simple">
+<li><p>Blinded re-assessment: estimation of the variance or the overall event reate of the primary endpoint from blinded interim data, where the observations from both groups are pooled without revealing the data.</p></li>
+<li><p>Unblinded re-assessment: based on unblinded interim treatment effect estimates</p></li>
+</ol>
+</li>
+<li><p>Challenges</p>
+<ol class="arabic simple">
+<li><p>Leakage of information about decision</p></li>
+<li><p>Operational bias (investigators’ behavior may change as a result)</p></li>
+<li><p>For the unblinded re-assessment, the interim estimate of the treatment effect can be misleading if it is based on small partial data.</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="adaptive-randomization-allocation">
+<h3>3. Adaptive randomization (Allocation)<a class="headerlink" href="#adaptive-randomization-allocation" title="Permalink to this heading">#</a></h3>
+<p>In clinical trials employing adaptive design, allocation probagbilities can be adjusted based on accumulating data throughtout the course of the trial.</p>
+<section id="minimization-covariate-adaptive-randomization">
+<h4>3-1. Minimization (Covariate adaptive randomization)<a class="headerlink" href="#minimization-covariate-adaptive-randomization" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Definition</p>
+<ol class="arabic simple">
+<li><p>Adapts allocation to minimize imbalance of pre-specified prognostic factors between groups.</p></li>
+<li><p>Treatment allocation of the new paitent enrolling into the trial is determined based on the <strong>characteristics of the patients already enrolled</strong>.</p></li>
+</ol>
+</li>
+<li><p>Challenges</p>
+<ol class="arabic simple">
+<li><p>Allocation procedure is dependent on known baseline factors, so the theoretical properties of archieving balance of both known and unknown factors are not clear.</p></li>
+<li><p>If unimportant prognostic factors are chosen, minimization may result in a balance that is not relevant for statitstical inference.</p></li>
+<li><p>Practical challenges: allocation concealment is difficult (secure allocation system should be used) -&gt; Raise complexity and Cost</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="response-adaptive-randomzation-outcome-adaptive-randomization">
+<h4>3-2. Response adaptive randomzation (Outcome adaptive randomization)<a class="headerlink" href="#response-adaptive-randomzation-outcome-adaptive-randomization" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Definition</p>
+<ol class="arabic simple">
+<li><p>Clinicians often perceive randomization as being uncomfortable and potentially conflicting with patient care. Patients’ willingness to participate in RCT can also vary greatly.</p></li>
+<li><p>A type of adaptive trial design in which allocation ratios are preferentially adapted in favor of study arm based on interim results.</p></li>
+<li><p>Use past treatment assignments AND <strong>patient responses</strong> to adapt the allocation probability for future patients beingn enrolled.</p></li>
+<li><p>More patients could be randomized to the superior treatment (Ethically appealing properties)</p></li>
+</ol>
+</li>
+<li><p>Challenges</p>
+<ol class="arabic simple">
+<li><p>Unequal balance of patients</p></li>
+<li><p>Statistical challenges</p></li>
+<li><p>No RCTs have examined the effect of response adaptive randomization (2018)</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="adaptive-enrichment-design-eligibility-criteria">
+<h3>4. Adaptive enrichment design (Eligibility criteria)<a class="headerlink" href="#adaptive-enrichment-design-eligibility-criteria" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Definition</p>
+<ol class="arabic simple">
+<li><p>Modifiaction of trial eligibility criteria based on an interim analysis to restrict future enrolment to narrower groups of patients (more responsive to treatments).</p></li>
+<li><p>Often involve predictive biomarkers (e.g., gene mutations)</p></li>
+<li><p>If evidence suggests that the biomarker-positive subpopulation is more likely to benefit from the treatment, the trial may be adapted by modifying eligibility criteria-either exlcuding the biomarker-negative or reducing their enrollment proportion (positive group <strong>“enriched”</strong>).</p></li>
+</ol>
+</li>
+<li><p>Challenges</p>
+<ol class="arabic simple">
+<li><p>Rely on baseline information of biomarker status</p></li>
+<li><p>make smaller potential pool of an eligible population (difficult to recruit patients)</p></li>
+<li><p>Add trial cost</p></li>
+<li><p>Generalizability (if the trial ends up making a false enrichment decision)</p></li>
+</ol>
+</li>
+</ul>
+</section>
+<section id="seamless-design">
+<h3>5. Seamless Design<a class="headerlink" href="#seamless-design" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Definition</p>
+<ol class="arabic simple">
+<li><p>Seamless design are a type of adaptive trial design that enable a direct transition from one phase of the trial to the next without interruption (e.g., Phase IIB/III trials).</p></li>
+<li><p>this approach is particularly useful for reducing the overall duration of clinical drug development process.</p></li>
+</ol>
+</li>
+<li><p>Types</p>
+<ol class="arabic simple">
+<li><p>Operationally seamless: Eliminates time between the tow phases, but analyses in the later phase would not include the data collected from the earlier phase.</p></li>
+<li><p>Inferentially seamless: Use data from both phases for analysis.</p></li>
+</ol>
+</li>
+<li><p>Challenges</p>
+<ol class="arabic simple">
+<li><p>Require early data can be rapidly analysed and interpreted to inform decisions about transition into the subsequent phase</p></li>
+<li><p>Challenges on administration and infrastructure</p></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<p>We discussed common types of adaptive trial designs and how they leverage accumulating interim data to implement pre-specified adaptations.
+It is crucial to clearly pre-specify and transparently report the interim analysis plan, including endpoints, statistical methods, stopping criteria, timing of the first interim analysis (burn-in period), and the number of frequency of subsequent analyses.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Characteristics and Principles of Adaptive Trial Designs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Protocol_example_ppt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Protocol Example - ppt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-chungsoo-kim">Presenter : Chungsoo Kim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#common-types-of-adaptive-trial-designs">Common types of adaptive trial designs</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sequential-design">1. Sequential design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-re-assessment-sample-size">2. Sample size re-assessment (Sample Size)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-randomization-allocation">3. Adaptive randomization (Allocation)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#minimization-covariate-adaptive-randomization">3-1. Minimization (Covariate adaptive randomization)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#response-adaptive-randomzation-outcome-adaptive-randomization">3-2. Response adaptive randomzation (Outcome adaptive randomization)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-enrichment-design-eligibility-criteria">4. Adaptive enrichment design (Eligibility criteria)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seamless-design">5. Seamless Design</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
