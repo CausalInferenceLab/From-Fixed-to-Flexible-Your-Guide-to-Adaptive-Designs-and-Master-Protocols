@@ -8,8 +8,8 @@
 
 - Monte Carlo simulation : example of coin toss 
 
-
 | General Steps                   | Applied to te coin toss example                |
+|---------------------------------|------------------------------------------------|
 | *Specify numerical values for*: |                                                |                                
 | - Simulation parameters         | Probability of heads = 0.50                    |
 | - Sample size                   | 10 tosses of the coin                          |
@@ -59,6 +59,7 @@
 ## Design and Scenario Assumptions
 
 | No. | Trial designs                         | Scenarios                                        |
+|-----|---------------------------------------|--------------------------------------------------|
 | 1   | Equal randomisation                   | Equal treatment effect/response rate (Null)      |
 |     | - 1:1 allocation to E and S           | - pS = 0.3 and pE = 0.3                          |
 | 2   | RAR with no minimum/maximum allocation| 10% higher response rate in E                    |

@@ -411,15 +411,39 @@ document.write(`
 <ul class="simple">
 <li><p>Monte Carlo simulation : example of coin toss</p></li>
 </ul>
-<p>| General Steps                   | Applied to te coin toss example                |
-| <em>Specify numerical values for</em>: |                                                |<br />
-| - Simulation parameters         | Probability of heads = 0.50                    |
-| - Sample size                   | 10 tosses of the coin                          |
-| - Analysis/test statistics      | Number of heads out of the 10 tosses           |
-| <em>For each replication</em>:         |                                                |
-| 1. Generate data                | Generate 10 random coin tosses                 |
-| 2. Run Analysis                 | Count the number of heads out of 10 tosses     |
-| 3. Keep track of the performance| Keep track of 2 and repeat 1,000 times         |</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>General Steps</p></th>
+<th class="head"><p>Applied to te coin toss example</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><em>Specify numerical values for</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>- Simulation parameters</p></td>
+<td><p>Probability of heads = 0.50</p></td>
+</tr>
+<tr class="row-even"><td><p>- Sample size</p></td>
+<td><p>10 tosses of the coin</p></td>
+</tr>
+<tr class="row-odd"><td><p>- Analysis/test statistics</p></td>
+<td><p>Number of heads out of the 10 tosses</p></td>
+</tr>
+<tr class="row-even"><td><p><em>For each replication</em>:</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>1. Generate data</p></td>
+<td><p>Generate 10 random coin tosses</p></td>
+</tr>
+<tr class="row-even"><td><p>2. Run Analysis</p></td>
+<td><p>Count the number of heads out of 10 tosses</p></td>
+</tr>
+<tr class="row-odd"><td><p>3. Keep track of the performance</p></td>
+<td><p>Keep track of 2 and repeat 1,000 times</p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
 <li><p>In Clinical trial, we can’t repeat the trial like coin flip.</p></li>
 <li><p>The Utility of simulation studies in a clinical design prcess has become very important.</p></li>
@@ -466,21 +490,72 @@ document.write(`
 </ul>
 <section id="design-and-scenario-assumptions">
 <h2>Design and Scenario Assumptions<a class="headerlink" href="#design-and-scenario-assumptions" title="Permalink to this heading">#</a></h2>
-<p>| No. | Trial designs                         | Scenarios                                        |
-| 1   | Equal randomisation                   | Equal treatment effect/response rate (Null)      |
-|     | - 1:1 allocation to E and S           | - pS = 0.3 and pE = 0.3                          |
-| 2   | RAR with no minimum/maximum allocation| 10% higher response rate in E                    |
-|     | - At interim analysis, adapt the      | - pS = 0.3 and pE = 0.4                          |
-|     |   allocation probability for E to     |                                                  |
-|     |   probability that E has higher       |                                                  |
-|     |   response rate than S (pE)           |                                                  |
-|     | - Allocation of S would be 1 − pE     |                                                  |
-| 3   | RAR with minimum/maximum allocation   | 20% higher response rate in E                    |
-|     | - Same as Design 2 with 10% minimum   | - pS = 0.3 and pE = 0.5                          |
-|     |   and 90% maximal allocation          |                                                  |
-|     |   probabilities, to ensure that the   |                                                  |
-|     |   allocation does not get ‘stuck’     |                                                  |
-|     |   on one study arm                    |                                                  |</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>No.</p></th>
+<th class="head"><p>Trial designs</p></th>
+<th class="head"><p>Scenarios</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1</p></td>
+<td><p>Equal randomisation</p></td>
+<td><p>Equal treatment effect/response rate (Null)</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>- 1:1 allocation to E and S</p></td>
+<td><p>- pS = 0.3 and pE = 0.3</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>RAR with no minimum/maximum allocation</p></td>
+<td><p>10% higher response rate in E</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>- At interim analysis, adapt the</p></td>
+<td><p>- pS = 0.3 and pE = 0.4</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>allocation probability for E to</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>probability that E has higher</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>response rate than S (pE)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>- Allocation of S would be 1 − pE</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>3</p></td>
+<td><p>RAR with minimum/maximum allocation</p></td>
+<td><p>20% higher response rate in E</p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>- Same as Design 2 with 10% minimum</p></td>
+<td><p>- pS = 0.3 and pE = 0.5</p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>and 90% maximal allocation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>probabilities, to ensure that the</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p></p></td>
+<td><p>allocation does not get ‘stuck’</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p></p></td>
+<td><p>on one study arm</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
 <ul class="simple">
 <li><p>Patient enrollment followed a Poisson process with interim analysis every 10 subjects after a 30-subject burn-in.</p></li>
 <li><p>Response probabilities:</p>
