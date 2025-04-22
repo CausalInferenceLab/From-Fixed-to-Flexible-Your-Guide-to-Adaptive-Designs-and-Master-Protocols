@@ -1,0 +1,699 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Chapter 5 - Clinical Trial Simulation &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Ch5_Clinical _Trial_ Simultaion';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Protocol Example - ppt" href="Protocol_example_ppt.html" />
+    <link rel="prev" title="Ch 4. Common Types of Adaptive Trial Designs" href="Ch4_Common_Types.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History_of_clinical_trials.html">History of Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html">Characteristics and Principles of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch4_Common_Types.html">Ch 4. Common Types of Adaptive Trial Designs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Chapter 5 - Clinical Trial Simulation</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example_ppt.html">Protocol Example - ppt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example.html">Protocol Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues/new?title=Issue%20on%20page%20%2Fdocs/Ch5_Clinical _Trial_ Simultaion.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Ch5_Clinical _Trial_ Simultaion.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Chapter 5 - Clinical Trial Simulation</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 5 - Clinical Trial Simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-heeseok-yoo">Presenter : HeeSeok Yoo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trial-simulation">Clinical Trial Simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-clinical-trial-simulation">Overview of Clinical Trial Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles-of-simulation-guided-trial-design">Principles of Simulation-Guided Trial Design</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-guided-design-planning-case-study">Simulation-Guided Design Planning Case Study</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-scenario-assumptions">Design and Scenario Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examination-of-singl-virtual-trials">Examination of Singl Virtual Trials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-reports">Simulation Reports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-software">Simulation Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="chapter-5-clinical-trial-simulation">
+<h1>Chapter 5 - Clinical Trial Simulation<a class="headerlink" href="#chapter-5-clinical-trial-simulation" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="presenter-heeseok-yoo">
+<h1>Presenter : HeeSeok Yoo<a class="headerlink" href="#presenter-heeseok-yoo" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1><strong>Introduction</strong><a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Monte Carlo simulation : example of coin toss</p></li>
+</ul>
+<p>| General Steps                   | Applied to te coin toss example                |
+| <em>Specify numerical values for</em>: |                                                |<br />
+| - Simulation parameters         | Probability of heads = 0.50                    |
+| - Sample size                   | 10 tosses of the coin                          |
+| - Analysis/test statistics      | Number of heads out of the 10 tosses           |
+| <em>For each replication</em>:         |                                                |
+| 1. Generate data                | Generate 10 random coin tosses                 |
+| 2. Run Analysis                 | Count the number of heads out of 10 tosses     |
+| 3. Keep track of the performance| Keep track of 2 and repeat 1,000 times         |</p>
+<ul class="simple">
+<li><p>In Clinical trial, we can’t repeat the trial like coin flip.</p></li>
+<li><p>The Utility of simulation studies in a clinical design prcess has become very important.</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="clinical-trial-simulation">
+<h1>Clinical Trial Simulation<a class="headerlink" href="#clinical-trial-simulation" title="Permalink to this heading">#</a></h1>
+<section id="terms">
+<h2>Terms<a class="headerlink" href="#terms" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Operating characteristics - description of how a design performs under various scenarios.</p></li>
+<li><p>Scenario - List of values specifying the ‘true’ underlying parameters, such as true response rates, recuritment rate, etc.</p></li>
+<li><p>Simulation - Repeated analyses of randomly generated datasets drawn under specific assumptions.</p></li>
+<li><p>Simulation report - Written documents that provides the explanation, details, and justification of the simulation study.</p></li>
+<li><p>Trial design - Details about how the trial is conducted.</p></li>
+<li><p>Virtual trial - Clinical trial being simulated in computer.</p></li>
+</ul>
+</section>
+<section id="overview-of-clinical-trial-simulation">
+<h2>Overview of Clinical Trial Simulation<a class="headerlink" href="#overview-of-clinical-trial-simulation" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The goal of cilnical trial sumulation is to make virtual trial design match as closely as possible how the trial will be conducted.</p></li>
+<li><p>General steps of simulation for an adaptive clinical trial would involve:
+** Step 1: Simulate the arrival time of the next patient.
+** Step 2: Check the stopping rules to see if the trial should be stopped.
+** Step 3: If the trial not stopped, enroll more patients into the nexy interim analysis.
+** Step 4: Simulate the patient outcome as a fuction of the treatment.
+** Step 5: Repeat steps 1-4</p></li>
+</ul>
+</section>
+<section id="principles-of-simulation-guided-trial-design">
+<h2>Principles of Simulation-Guided Trial Design<a class="headerlink" href="#principles-of-simulation-guided-trial-design" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Simulation-guided trial design encourages evaluating multiple design options early to ensure the most efficient and ethical choice is made for each clinical question.</p></li>
+<li><p>Adaptive designs can improve trial success by anticipating potential regrets and adjusting accordingly, serving as a form of ‘insurance’ against trial failure.</p></li>
+</ul>
+</section>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="simulation-guided-design-planning-case-study">
+<h1>Simulation-Guided Design Planning Case Study<a class="headerlink" href="#simulation-guided-design-planning-case-study" title="Permalink to this heading">#</a></h1>
+<ul class="simple">
+<li><p>Simulation studies help explore the trade-offs between trial designs beyond average behavior.</p></li>
+<li><p>Rather than recommending one design, a Bayesian adaptive approach is used to review different metrics.</p></li>
+</ul>
+<section id="design-and-scenario-assumptions">
+<h2>Design and Scenario Assumptions<a class="headerlink" href="#design-and-scenario-assumptions" title="Permalink to this heading">#</a></h2>
+<p>| No. | Trial designs                         | Scenarios                                        |
+| 1   | Equal randomisation                   | Equal treatment effect/response rate (Null)      |
+|     | - 1:1 allocation to E and S           | - pS = 0.3 and pE = 0.3                          |
+| 2   | RAR with no minimum/maximum allocation| 10% higher response rate in E                    |
+|     | - At interim analysis, adapt the      | - pS = 0.3 and pE = 0.4                          |
+|     |   allocation probability for E to     |                                                  |
+|     |   probability that E has higher       |                                                  |
+|     |   response rate than S (pE)           |                                                  |
+|     | - Allocation of S would be 1 − pE     |                                                  |
+| 3   | RAR with minimum/maximum allocation   | 20% higher response rate in E                    |
+|     | - Same as Design 2 with 10% minimum   | - pS = 0.3 and pE = 0.5                          |
+|     |   and 90% maximal allocation          |                                                  |
+|     |   probabilities, to ensure that the   |                                                  |
+|     |   allocation does not get ‘stuck’     |                                                  |
+|     |   on one study arm                    |                                                  |</p>
+<ul class="simple">
+<li><p>Patient enrollment followed a Poisson process with interim analysis every 10 subjects after a 30-subject burn-in.</p></li>
+<li><p>Response probabilities:</p>
+<ul>
+<li><p>pS ~ Beta(0.2, 0.8)</p></li>
+<li><p>pE ~ Beta(0.2, 0.8)</p></li>
+</ul>
+</li>
+<li><p>Stopping rules:</p>
+<ul>
+<li><p>Superiority threshold = 0.995</p></li>
+<li><p>Futility threshold = 0.005</p></li>
+<li><p>Ensures Type I error &lt; 3.3% under null</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="simulation-results">
+<h2>Simulation results<a class="headerlink" href="#simulation-results" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Type I error ~0.03 in Scenario 1 across designs</p></li>
+<li><p>Design 1 has highest power in all scenarios (0.72 in Scenario 3)</p></li>
+<li><p>Early stopping rates and mean sample sizes vary</p></li>
+<li><p>P20 metric introduced: % of trials where ≥20 more patients assigned to SOC</p></li>
+</ul>
+</section>
+<section id="examination-of-singl-virtual-trials">
+<h2>Examination of Singl Virtual Trials<a class="headerlink" href="#examination-of-singl-virtual-trials" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Figures display randomization probabilities over time for virtual trials</p></li>
+<li><p>Design 2 shows large imbalance in some trials, e.g., 172:26 (SOC:E) in null scenario</p></li>
+<li><p>Design 3 mitigates imbalance via min allocation threshold</p></li>
+<li><p>In Scenario 2 and 3, some trials assigned more to inferior treatment → RAR risk</p></li>
+<li><p>P20 exposes ethical risk of RAR misallocating patients</p></li>
+<li><p>Even fixed randomization (Design 1) can show imbalance without blocked randomization</p></li>
+<li><p>Design evaluation must go beyond averages — include worst-case risks</p></li>
+</ul>
+</section>
+<section id="simulation-reports">
+<h2>Simulation Reports<a class="headerlink" href="#simulation-reports" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Essential for adaptive and complex trials</p></li>
+<li><p>DIA-ADSWG recommends including:</p>
+<ul>
+<li><p>Objectives, inputs, design rules</p></li>
+<li><p>Scenario definitions, operating characteristics</p></li>
+<li><p>Discussion and justification of chosen design (Table 5.4)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="simulation-software">
+<h2>Simulation Software<a class="headerlink" href="#simulation-software" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Commercial</strong>: EAST®, ADDPLAN®, COMPASS®, FACTS</p>
+<ul>
+<li><p>Advantages: ready-to-use, no coding required</p></li>
+<li><p>Limitations: cost, limited flexibility for custom designs</p></li>
+</ul>
+</li>
+<li><p><strong>Open-source (R-based)</strong>:</p>
+<ul>
+<li><p>Notable packages: <code class="docutils literal notranslate"><span class="pre">rpact</span></code>, <code class="docutils literal notranslate"><span class="pre">MAMS</span></code>, <code class="docutils literal notranslate"><span class="pre">Mediana</span></code>, <code class="docutils literal notranslate"><span class="pre">multiarm</span></code>, <code class="docutils literal notranslate"><span class="pre">adaptr</span></code>, <code class="docutils literal notranslate"><span class="pre">OCTOPUS</span></code>, <code class="docutils literal notranslate"><span class="pre">gsDesign</span></code></p></li>
+<li><p>Many offer vignette tutorials</p></li>
+<li><p>Available on CRAN and GitHub</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Simulation is critical to evaluate trial design operating characteristics</p></li>
+<li><p>Adaptive designs may improve ethics but carry trade-offs</p></li>
+<li><p>No universal best design — simulation helps identify the most efficient and ethical option per research question</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ch4_Common_Types.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ch 4. Common Types of Adaptive Trial Designs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Protocol_example_ppt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Protocol Example - ppt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Chapter 5 - Clinical Trial Simulation</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-heeseok-yoo">Presenter : HeeSeok Yoo</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction"><strong>Introduction</strong></a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#clinical-trial-simulation">Clinical Trial Simulation</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#terms">Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#overview-of-clinical-trial-simulation">Overview of Clinical Trial Simulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#principles-of-simulation-guided-trial-design">Principles of Simulation-Guided Trial Design</a></li>
+</ul>
+</li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-guided-design-planning-case-study">Simulation-Guided Design Planning Case Study</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-scenario-assumptions">Design and Scenario Assumptions</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-results">Simulation results</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examination-of-singl-virtual-trials">Examination of Singl Virtual Trials</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-reports">Simulation Reports</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simulation-software">Simulation Software</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
