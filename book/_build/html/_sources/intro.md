@@ -51,8 +51,8 @@ Join us in making clinical trials more efficient and responsive!
 | **Member** | SooYoung Kwak | [https://www.linkedin.com/in/systat/](https://www.linkedin.com/in/systat/) | Medical device regulation                  |
 | **Member** | Chungsoo Kim | [https://www.linkedin.com/in/chungsoo-kim-42419b175/](https://www.linkedin.com/in/chungsoo-kim-42419b175/) | pharmacoepidemiology, medical informatics, health data science, cardiovascular disease, chronic disease                  |
 | **Member** | Jeongsun Park | [https://www.linkedin.com/in/sun-park-861272138/](https://www.linkedin.com/in/sun-park-861272138/) | |
-| **Member** | [Christina Obeid](https://github.com/tinnerobeid) | [https://www.linkedin.com/in/christina-obeid-14158b272/](https://www.linkedin.com/in/christina-obeid-14158b272/)| |
-| **Member** | HeeSeok YOO |  | |
+| **Member** | [Christina Obeid](https://github.com/tinnerobeid) | [https://www.linkedin.com/in/christina-obeid-14158b272/](https://www.linkedin.com/in/christina-obeid-14158b272/)| cybersecurity, data science, and backend dev |
+| **Member** | HeeSeok YOO | [https://www.linkedin.com/in/%ED%9D%AC%EC%84%9D-%EC%9C%A0-763999245/](https://www.linkedin.com/in/%ED%9D%AC%EC%84%9D-%EC%9C%A0-763999245/) | |
 
 
 ## 💻 Activity History
@@ -63,8 +63,8 @@ Join us in making clinical trials more efficient and responsive!
 | 2025/03/19 |  Introduction to Clinical Trial Research | [Sang Ho Park](https://www.linkedin.com/in/shstat1729/) | [Intro to Clinical Trial Research](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/intro_to_clinical_research.html) |
 | 2025/03/24-2025/03/30 |  Magical Week 1 |  | |
 | 2025/04/02 |  History of Clinical Trial Research  | [Christina Obeid](https://github.com/tinnerobeid) | [History of Clinical Trials](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/History_of_clinical_trials.html) |
-| 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs |  | |
-| 2025/04/16 |  Common Types of Adaptive Trial Designs |  | |
+| 2025/04/09 |  Characteristics and Principles of Adaptive Trial Designs | [Jeongsun Park](https://www.linkedin.com/in/sun-park-861272138/) | [Characteristics and Principles of Adaptive Trial Designs](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/Characteristics_and_Principles_of_Adaptive_Trial_Designs.html)|
+| 2025/04/16 |  Common Types of Adaptive Trial Designs | [Chungsoo Kim](https://www.linkedin.com/in/chungsoo-kim-42419b175/) |[Common Types of Adaptive Trial Designs](https://causalinferencelab.github.io/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/docs/Ch4_Common_Types.html) |
 | 2025/04/23 |  Clnicial Trial Simulations |  | | 
 | 2025/04/28-2025/05/03 |  Magical Week 2 |  | | 
 | 2025/05/07 |  Characteristics and Principles of Master Protocols |  | | 
