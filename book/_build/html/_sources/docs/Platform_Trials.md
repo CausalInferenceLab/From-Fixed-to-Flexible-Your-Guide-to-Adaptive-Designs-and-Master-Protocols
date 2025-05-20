@@ -1,5 +1,7 @@
 # Platform Trials
 
+Presenter : [SooYoung Kwak](https://www.linkedin.com/in/systat/)
+
 ![](../pics/Overview_Platformtrial.jpeg)
 
 ## Overall Summary
