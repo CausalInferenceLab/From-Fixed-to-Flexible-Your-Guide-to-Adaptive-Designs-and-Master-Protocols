@@ -1,6 +1,6 @@
 # Platform Trials
 
-![][../pics/Overview_Platformtrial.jpeg]
+![](../pics/Overview_Platformtrial.jpeg)
 
 ## Overall Summary
 
