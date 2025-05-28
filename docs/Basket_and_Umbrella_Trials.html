@@ -1,0 +1,681 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Basket Trials and Umbrella Trials &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Basket_and_Umbrella_Trials';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Protocol Example - ppt" href="Protocol_example_ppt.html" />
+    <link rel="prev" title="Platform Trials" href="Platform_Trials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History_of_clinical_trials.html">History of Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html">Characteristics and Principles of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch4_Common_Types.html">Ch 4. Common Types of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch5_Clinical%20_Trial_%20Simultaion.html">Chapter 5 - Clinical Trial Simulation</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Master_Protocols.html">Characteristics and Principles of Master Protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Platform_Trials.html">Platform Trials</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Basket Trials and Umbrella Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example_ppt.html">Protocol Example - ppt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example.html">Protocol Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues/new?title=Issue%20on%20page%20%2Fdocs/Basket_and_Umbrella_Trials.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Basket_and_Umbrella_Trials.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Basket Trials and Umbrella Trials</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-heeseok-yoo">Presenter : HeeSeok Yoo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Basket Trials and Umbrella Trials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basket-trials">Basket Trials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umbrella-trials">Umbrella Trials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-basket-and-umbrella-trials">Characteristics of Basket and Umbrella Trials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility-criteria-and-patient-grouping">Eligibility Criteria and Patient Grouping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervention-assignment-and-control-group-choice">Intervention Assignment and Control Group Choice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-against-other-biomarker-guided-trials">Comparison Against Other Biomarker-Guided Trials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-design-considerations-for-basket-and-umbrella-trials">Key Design Considerations for Basket and Umbrella Trials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-plausibility">Biological Plausibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-of-biomarker-assays">Accuracy of Biomarker Assays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biospecimen-collection">Biospecimen Collection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biomarker-prevalence">Biomarker Prevalence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-and-statistical-assumptions">Sample Size and Statistical Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization">Randomization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="basket-trials-and-umbrella-trials">
+<h1>Basket Trials and Umbrella Trials<a class="headerlink" href="#basket-trials-and-umbrella-trials" title="Permalink to this heading">#</a></h1>
+<section id="presenter-heeseok-yoo">
+<h2>Presenter : HeeSeok Yoo<a class="headerlink" href="#presenter-heeseok-yoo" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Biomarker-guided clinical trials have become a cornerstone of precision medicine.</p></li>
+<li><p>Basket and umbrella trials are types of master protocol trials using standardized screening and operating procedures.</p></li>
+<li><p>These designs aim to improve efficiency in evaluating targeted interventions in biomarker-defined populations.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="id1">
+<h2>Basket Trials and Umbrella Trials<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="basket-trials">
+<h3>Basket Trials<a class="headerlink" href="#basket-trials" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Evaluate a targeted intervention across multiple diseases that share a common predictive biomarker.</p></li>
+<li><p>Patients with different tumor histologies (e.g., lung, breast, colon) are grouped together if they harbor the same biomarker.</p></li>
+<li><p>Can use single-arm or randomized designs depending on phase and objective.</p></li>
+</ul>
+</section>
+<section id="umbrella-trials">
+<h3>Umbrella Trials<a class="headerlink" href="#umbrella-trials" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Evaluate multiple targeted therapies in a single disease, with patients stratified into biomarker-defined subgroups.</p></li>
+<li><p>Each subgroup receives a different intervention matched to its molecular profile.</p></li>
+<li><p>May include randomization within arms and often involve a shared control arm.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="characteristics-of-basket-and-umbrella-trials">
+<h2>Characteristics of Basket and Umbrella Trials<a class="headerlink" href="#characteristics-of-basket-and-umbrella-trials" title="Permalink to this heading">#</a></h2>
+<section id="eligibility-criteria-and-patient-grouping">
+<h3>Eligibility Criteria and Patient Grouping<a class="headerlink" href="#eligibility-criteria-and-patient-grouping" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Basket Trials</strong>: Patients from different diseases are grouped by a shared predictive biomarker.</p></li>
+<li><p><strong>Umbrella Trials</strong>: Patients with the same disease are divided into subgroups by biomarker status.</p></li>
+<li><p>Disease integration in basket trials assumes consistent drug activity across tumor types.</p></li>
+<li><p>Biomarker-based stratification in umbrella trials requires biological plausibility for each subgroup.</p></li>
+</ul>
+</section>
+<section id="intervention-assignment-and-control-group-choice">
+<h3>Intervention Assignment and Control Group Choice<a class="headerlink" href="#intervention-assignment-and-control-group-choice" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Basket trials often assign a common intervention without a control group.</p></li>
+<li><p>Umbrella trials typically assign different therapies per subgroup and more commonly include control arms (e.g., standard of care).</p></li>
+<li><p>Use of shared control arms is encouraged for efficiency and comparability.</p></li>
+</ul>
+</section>
+<section id="comparison-against-other-biomarker-guided-trials">
+<h3>Comparison Against Other Biomarker-Guided Trials<a class="headerlink" href="#comparison-against-other-biomarker-guided-trials" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Basket and umbrella trials follow master protocols with predefined subgroups and standardized eligibility criteria.</p></li>
+<li><p>Different from adaptive enrichment trials, which allow modification based on interim data.</p></li>
+<li><p>Centralized screening and infrastructure improve implementation and coordination.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="key-design-considerations-for-basket-and-umbrella-trials">
+<h2>Key Design Considerations for Basket and Umbrella Trials<a class="headerlink" href="#key-design-considerations-for-basket-and-umbrella-trials" title="Permalink to this heading">#</a></h2>
+<section id="biological-plausibility">
+<h3>Biological Plausibility<a class="headerlink" href="#biological-plausibility" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Biological plausibility requires careful evaluations of existing clinical evidence and underlying biological assumptions.</p></li>
+<li><p>Ensures that targeted interventions are appropriate for the biomarker-defined population.</p></li>
+<li><p>Important to distinguish between driver mutations (causally linked to disease) and passenger mutations.</p></li>
+</ul>
+</section>
+<section id="accuracy-of-biomarker-assays">
+<h3>Accuracy of Biomarker Assays<a class="headerlink" href="#accuracy-of-biomarker-assays" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Misclassification due to false positives or false negatives reduces statistical power and may lead to incorrect conclusions.</p></li>
+<li><p>False positive rates (FPRs) should be considered in trial planning, though often overlooked.</p></li>
+<li><p>Particularly critical in exploratory (phase II) settings for correct candidate selection.</p></li>
+<li><p>In basket trials, assay accuracy should be similar across tumor types.</p></li>
+</ul>
+</section>
+<section id="biospecimen-collection">
+<h3>Biospecimen Collection<a class="headerlink" href="#biospecimen-collection" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Standardized biospecimen collection is essential, especially in basket trials involving multiple histologies.</p></li>
+<li><p>Sample quality, yield, and ease of acquisition should be consistent across tumor types.</p></li>
+<li><p>Even in high-throughput centers, biopsy yield (e.g., 70% for lung adenocarcinoma) can be limited.</p></li>
+<li><p>Liquid biopsy offers less invasive alternatives but must be validated and cannot replace histopathological examination.</p></li>
+</ul>
+</section>
+<section id="biomarker-prevalence">
+<h3>Biomarker Prevalence<a class="headerlink" href="#biomarker-prevalence" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Biomarker prevalence affects the size of the eligible patient pool and feasibility of recruitment.</p></li>
+<li><p>Low prevalence may result in high screen failure rates and increased cost due to unnecessary testing.</p></li>
+<li><p>Recruitment strategies must account for biomarker distribution to ensure adequate sample size within study duration.</p></li>
+</ul>
+</section>
+<section id="sample-size-and-statistical-assumptions">
+<h3>Sample Size and Statistical Assumptions<a class="headerlink" href="#sample-size-and-statistical-assumptions" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Sample size depends on trial phase and design (e.g., single-arm vs. randomized).</p></li>
+<li><p>In <strong>basket trials</strong>, sample size may be calculated for the overall cohort using a single effect size.</p></li>
+<li><p>This assumes a common predictive factor; heterogeneity in treatment effect can dilute efficacy signals.</p></li>
+<li><p>In <strong>umbrella trials</strong>, sample size is calculated per subgroup; common control arms are recommended when feasible.</p></li>
+<li><p>The predictive assumption must be valid—otherwise, an all-comers design may be more appropriate.</p></li>
+</ul>
+</section>
+<section id="randomization">
+<h3>Randomization<a class="headerlink" href="#randomization" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Predictive factors influence treatment response; prognostic factors affect outcomes regardless of treatment.</p></li>
+<li><p>Without randomization, it is difficult to separate predictive from prognostic effects.</p></li>
+<li><p>Randomization eliminates selection bias and balances measurable and unmeasurable variables.</p></li>
+<li><p>Statistical adjustments may partially compensate when randomization isn’t feasible, but are limited by small sample sizes and only account for known factors.</p></li>
+<li><p>Thus, randomization is strongly preferred for validity.</p></li>
+</ul>
+</section>
+</section>
+<hr class="docutils" />
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Basket and umbrella trials are powerful tools for evaluating biomarker-guided therapies under a master protocol framework.</p></li>
+<li><p>Their design requires careful attention to biological plausibility, assay accuracy, biomarker prevalence, biospecimen logistics, and statistical assumptions.</p></li>
+<li><p>When well-executed, these trials enhance trial efficiency, reduce redundancy, and improve access to personalized treatment options.</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Platform_Trials.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Platform Trials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Protocol_example_ppt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Protocol Example - ppt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-heeseok-yoo">Presenter : HeeSeok Yoo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Basket Trials and Umbrella Trials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basket-trials">Basket Trials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#umbrella-trials">Umbrella Trials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#characteristics-of-basket-and-umbrella-trials">Characteristics of Basket and Umbrella Trials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eligibility-criteria-and-patient-grouping">Eligibility Criteria and Patient Grouping</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#intervention-assignment-and-control-group-choice">Intervention Assignment and Control Group Choice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-against-other-biomarker-guided-trials">Comparison Against Other Biomarker-Guided Trials</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#key-design-considerations-for-basket-and-umbrella-trials">Key Design Considerations for Basket and Umbrella Trials</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biological-plausibility">Biological Plausibility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-of-biomarker-assays">Accuracy of Biomarker Assays</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biospecimen-collection">Biospecimen Collection</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#biomarker-prevalence">Biomarker Prevalence</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-and-statistical-assumptions">Sample Size and Statistical Assumptions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#randomization">Randomization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusion</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
