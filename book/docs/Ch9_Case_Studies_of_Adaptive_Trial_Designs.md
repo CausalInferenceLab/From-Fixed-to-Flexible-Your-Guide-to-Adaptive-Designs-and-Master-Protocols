@@ -89,7 +89,8 @@
 1) Background
 - Vosaroxin and Ara-c combination evaLuating Overall survival in Relapsed/refractory acute myeloid leukaemia (VALOR) was a phase III, double-blinded, adaptive randomised trial that evaluated vosaroxin + cytarabine versus placebo + cytarabine in patients with first relapsed or refractory acute myeloid leukaemia (AML) (NCT01191801). 
 - The relapsed or refractory AML has poor prognosis with median survival that is generally less than 1 year. Before VALOR began, a phase II trial on vosaroxin + cytarabine showed promising early results that supported the initiation of phase III evaluation.
-- ***While it is often the case that phase II data are used to plan phase III confirmatory trials, it is important to note that estimates from phase II can be subject to uncertainty.*** This makes planning difficult for phase III trials, especially when there are financial constraints. In this case study, we discuss how a method for adaptive sample size re-assessment called a ‘promising zone design’ developed by Mehta and Pocock [Reference Mehta and Pocock20] was used to plan and execute VALOR.
+- ***While it is often the case that phase II data are used to plan phase III confirmatory trials, it is important to note that estimates from phase II can be subject to uncertainty.*** This makes planning difficult for phase III trials, especially when there are financial constraints. 
+- In this case study, we discuss how a method for adaptive sample size re-assessment called a ‘promising zone design’ developed by Mehta and Pocock was used to plan and execute VALOR.
 
 2) Design and Methods
 - VALOR is an event-driven randomised trial that randomised AML patients 1:1 to the vosaroxin arm or to the placebo. The primary endpoint was overall survival (OS) with the intention-to-treat principle being used as the primary analysis. 
@@ -129,6 +130,8 @@ Table 9.3
 
 - The planned sample size was 250 patients, with approximately one-third consistently allocated to placebo, and the remaining participants assigned across the three treatment groups using response-adaptive randomisation. During the initial “burn-in” phase (the first 40 patients), equal allocation (1:1:1:1) was maintained across all groups. 
 
+- Thereafter, interim analyses occurred after every 12 enrolled patients, allowing the allocation ratios among the three active arms to be adjusted according to each dose’s evolving likelihood of being the most effective at improving SOFA scores.
+
 Table 9.4
 
 | Adaptation |
@@ -138,19 +141,13 @@ Table 9.4
 | Post burn-in period: |
 |Interim analyses every 12 patients up to 250 patients or a stopping rule|
 
+- The trial incorporated pre-specified stopping criteria. If no L-carnitine dose showed at least a 40% posterior probability of being superior to placebo in reducing SOFA scores, the study could be halted for futility. 
+
 |Stopping||
 |---|---|
 |Response adaptive randomization |~1/3 fixed allocation maintained to control <br> ~2/3 of allocation can be adapted to the best doseFootnote*|
 |Early stopping for futility| <40% posterior probability that the most promising dose leads to improvement in SOFA at 48 hours versus placebo |
 |Early stopping for superiority|>90% posterior probability that the most promising dose leads to improvement in SOFA at 48 hours versus placebo & >70% predictive probability of successFootnote|
-
-
-
-
-
-- Thereafter, interim analyses occurred after every 12 enrolled patients, allowing the allocation ratios among the three active arms to be adjusted according to each dose’s evolving likelihood of being the most effective at improving SOFA scores.
-
-- The trial incorporated pre-specified stopping criteria. If no L-carnitine dose showed at least a 40% posterior probability of being superior to placebo in reducing SOFA scores, the study could be halted for futility. 
 
 - Conversely, if a dose exhibited both (1) over 90% posterior probability of benefit on SOFA score compared to placebo and (2) more than 70% predictive probability of achieving statistical significance for 28-day mortality in a future phase III trial (enrolling 2,000 patients in a 1:1 allocation), the study could be stopped early for superiority.
 
