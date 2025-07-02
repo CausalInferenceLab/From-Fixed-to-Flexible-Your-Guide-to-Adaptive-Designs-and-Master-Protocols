@@ -1,0 +1,911 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Ch 9. Case Studies of Adaptive Trial Designs &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Ch9_Case_Studies_of_Adaptive_Trial_Designs';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Protocol Example - ppt" href="Protocol_example_ppt.html" />
+    <link rel="prev" title="Basket Trials and Umbrella Trials" href="Basket_and_Umbrella_Trials.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History_of_clinical_trials.html">History of Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html">Characteristics and Principles of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch4_Common_Types.html">Ch 4. Common Types of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch5_Clinical%20_Trial_%20Simultaion.html">Chapter 5 - Clinical Trial Simulation</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Master_Protocols.html">Characteristics and Principles of Master Protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Platform_Trials.html">Platform Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basket_and_Umbrella_Trials.html">Basket Trials and Umbrella Trials</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Ch 9. Case Studies of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example_ppt.html">Protocol Example - ppt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example.html">Protocol Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues/new?title=Issue%20on%20page%20%2Fdocs/Ch9_Case_Studies_of_Adaptive_Trial_Designs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Ch9_Case_Studies_of_Adaptive_Trial_Designs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Ch 9. Case Studies of Adaptive Trial Designs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-chungsoo-kim">Presenter : Chungsoo Kim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-sequential-design">1. Group Sequential Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-1-musec-trial-nct00552604">Case Study 9.1: MUSEC Trial (NCT00552604)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seamless-design">2. Seamless Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-3-broad-spectrum-hpv-vaccine-study-nct00543543">Case Study 9.3: Broad-Spectrum HPV Vaccine Study (NCT00543543)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-re-assessment-design">3. Sample Size Re-Assessment Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-4-valor-nct01191801">Case Study 9.4: VALOR (NCT01191801)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#response-adaptive-randomisation-design">4. Response Adaptive Randomisation Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-5-race-nct01665092">Case Study 9.5: RACE (NCT01665092)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-enrichment-design">5. Adaptive Enrichment Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-6-tappas-nct02979899">Case Study 9.6: TAPPAS (NCT02979899)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="ch-9-case-studies-of-adaptive-trial-designs">
+<h1>Ch 9. Case Studies of Adaptive Trial Designs<a class="headerlink" href="#ch-9-case-studies-of-adaptive-trial-designs" title="Permalink to this heading">#</a></h1>
+<section id="presenter-chungsoo-kim">
+<h2>Presenter : Chungsoo Kim<a class="headerlink" href="#presenter-chungsoo-kim" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.linkedin.com/in/chungsoo-kim-42419b175/">LinkedIn</a>, <a class="reference external" href="https://github.com/ChungsooKim">Github</a>, <a class="reference external" href="https://medicine.yale.edu/profile/chungsoo-kim/">Personal page</a></p></li>
+</ul>
+</section>
+<section id="chapter-summary">
+<h2>Chapter Summary<a class="headerlink" href="#chapter-summary" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This chapter presents six examples of adaptive clinical trials, serving as a practical extension of the concepts introduced in earlier chapters.</p></li>
+<li><p>The case studies are grouped according to their primary adaptive design characteristics.</p></li>
+<li><p>Each example provides background context, outlines important aspects of the trial design, and summarizes the overall findings.</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>The case studies are categorized based on their principal adaptive features.</p></li>
+<li><p>Each example includes a brief overview of the trial’s background, a summary of key design elements, and a report of the main results.</p></li>
+</ul>
+<section id="group-sequential-design">
+<h3>1. Group Sequential Design<a class="headerlink" href="#group-sequential-design" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sequential design</p></td>
+<td><p>A group of designs that allows one or more interim analyses to be conducted to stop the trial early. <br>Early stopping can be made based on either superiority and/or futility.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="case-study-9-1-musec-trial-nct00552604">
+<h4>Case Study 9.1: MUSEC Trial (NCT00552604)<a class="headerlink" href="#case-study-9-1-musec-trial-nct00552604" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Background</p></li>
+</ol>
+<ul class="simple">
+<li><p>The MUltiple Sclerosis and Extract of Cannabis (MUSEC) trial was a phase III, randomized, double-blind, placebo-controlled study designed to evaluate the effectiveness of an oral cannabis extract in alleviating muscle stiffness among patients with stable multiple sclerosis (MS) (<a class="reference external" href="http://ClinicalTrials.gov">ClinicalTrials.gov</a> identifier: NCT00552604).</p></li>
+<li><p>This study aimed to test whether oral cannabis extract could provide symptom relief for muscle stiffness and pain in adults aged 18–64 living with MS.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Design and Methods</p></li>
+</ol>
+<ul class="simple">
+<li><p>Adults diagnosed with MS who had experienced stable disease for at least six months—and had reported persistent muscle stiffness for a minimum of three months—were eligible for participation.</p></li>
+<li><p>Participants were randomly assigned in a 1:1 ratio to receive either the cannabis extract or a placebo.</p></li>
+<li><p>The study included a 2-week dose-adjustment phase, followed by a 10-week fixed-dose treatment period.  Follow-up assessments were scheduled at weeks 2, 4, 8, and 12.</p></li>
+<li><p>The primary outcome was the proportion of participants achieving meaningful improvement in muscle stiffness (rating 0–3 vs. 4–10) at the 12-week mark.</p></li>
+<li><p>The main analysis followed the intention-to-treat principle, comparing responder rates at 12 weeks between the two study groups.</p></li>
+<li><p>Sample size estimates were based on assumptions of a 27% response rate in the placebo arm and a 15% absolute increase in the treatment arm, yielding a target response rate of 42%.</p></li>
+<li><p>To achieve 80% power at a one-sided alpha of 0.025, approximately 340 participants (170 per group) were needed. Anticipating up to 15% attrition, the target enrollment was increased to 400 (200 per group).</p></li>
+<li><p>An interim analysis was pre-specified once 200 participants had been assessed (representing 50% of the planned information fraction), using an O’Brien–Fleming boundary with an alpha of 0.0026 for early stopping based on superiority. Following this interim review, the independent Data and Safety Monitoring Board (DSMB) <strong>advised reducing the final sample size to 300</strong>, concluding that this would be sufficient to maintain a conditional power of 95%. To preserve the overall type I error rate at 0.025, the significance level for the final analysis was adjusted to 0.024.</p></li>
+</ul>
+</section>
+</section>
+<section id="seamless-design">
+<h3>2. Seamless Design<a class="headerlink" href="#seamless-design" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Seamless design</p></td>
+<td><p>Linked two phases of clinical trials, allowing immediate progression from one phase to the next (e.g., Phase IIB/III design).</p></td>
+</tr>
+</tbody>
+</table>
+<section id="case-study-9-3-broad-spectrum-hpv-vaccine-study-nct00543543">
+<h4>Case Study 9.3: Broad-Spectrum HPV Vaccine Study (NCT00543543)<a class="headerlink" href="#case-study-9-3-broad-spectrum-hpv-vaccine-study-nct00543543" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Background</p></li>
+</ol>
+<ul class="simple">
+<li><p>Cervical cancer is primarily caused by persistent infection with human papillomavirus (HPV), with types 16 and 18 responsible for approximately 70% of cases.</p></li>
+<li><p>At the time this study was conducted, the standard of care for HPV prevention was the quadrivalent HPV vaccine, which offers protection against four HPV strains: 6, 11, 16, and 18. Because this vaccine includes coverage for types 16 and 18, it was estimated to reduce cervical cancer risk by about 70%.</p></li>
+<li><p>The investigators of this trial hypothesized that expanding vaccine coverage to include additional high-risk HPV types could further enhance protection.</p></li>
+<li><p>To test this, they evaluated a nine-valent HPV vaccine (targeting types 6, 11, 16, 18, 31, 33, 45, 52, and 58) in a seamless phase IIB/III study, using the quadrivalent vaccine as the comparator (<a class="reference external" href="http://ClinicalTrials.gov">ClinicalTrials.gov</a> Identifier: NCT00543543).</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Design and Methods</p></li>
+</ol>
+<ul class="simple">
+<li><p>This trial started as a phase IIB trial with three different formulations with varying doses (low, medium, and high) of 9-valent HPV vaccine with the goal of identifying an optimal formulation for the phase III evaluation (Table 9.2).</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Intervention Group</p></th>
+<th class="head"><p>Control Group</p></th>
+<th class="head"><p>Target sample size or events</p></th>
+<th class="head"><p>Primary analysis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Phase IIB</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Three doses of 9-valent HPV vaccine: Low/medium/high</p></td>
+<td><p>4-valent HPV vaccine</p></td>
+<td><p>1,240 (310 per arm)</p></td>
+<td><p>Non-inferiority testing of antibody  response</p></td>
+</tr>
+<tr class="row-even"><td><p>Phase III</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>One dose of 9-valent HPV vaccine selected from Phase IIB</p></td>
+<td><p>4-valent HPV vaccine</p></td>
+<td><p>30 events and 14,000 patients (7,000 patients per arm)</p></td>
+<td><p>Superiority testing of High-grade cervical, vulvar, or vaginal disease related to HPV-31, -33, -45, -52, and -58 (strains covered by 9-valent HPV vaccine and not by 4-valent HPV vaccine.)</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>The three formulations of 9-valent were three-dose regimens with two subsequent doses being administered at month 2 and month 6 after the first dose, but with varying concentrations that could be characterised as ‘low-dose’, ‘medium-dose’, and ‘high-dose’. The control group with 4-valent HPV followed the same dosing schedule.</p></li>
+<li><p>The enrolment target for <strong>phase IIB</strong> portion of this trial was set at 310 patients per group (a total of 1,240 subjects) to obtain 209 to 230 evaluable patients per arm assuming an attrition rate of 10%.</p></li>
+<li><p>This was determined with the primary analysis being defined based on per-protocol analysis of non-inferiority of antibody responses to four types of HPVs that are protected by the control group at month 7.</p></li>
+<li><p>The per-protocol analysis group was defined by those who received three full doses of vaccine during the pre-specified visit intervals and provided the 7-month serum sample for assessment of the immunogenicity.</p></li>
+<li><p>For <strong>phase III</strong>, a per-protocol comparison of the rate of high-grade cervical, vulvar, or vaginal disease related to HPV strains not covered by 4-valent HPV vaccines (HPV-31, -33, -45, -52, and -58) was used as the primary analysis.</p></li>
+<li><p>The target sample size was determined at 14,000 patients (7,000 per group) for the final analysis being targeted when there were at least 30 events observed in the trial [Reference Joura, Giuliano and Iversen13]. Vaccine efficacy was defined by relative risk reduction (calculated by 1 – risk ratio in 9-valent vaccine/risk ratio in 4-valent vaccine).</p></li>
+<li><p>The target efficacy was defined by having a minimum threshold of 25% in the lower boundary of the 95% confidence interval of the vaccine efficacy. Assuming a true vaccine efficacy of 83% in favour of 9-valent HPV vaccine, a target of 30 events would provide 90% power to demonstrate the target efficacy of 25%.</p></li>
+<li><p>As a key secondary analysis, a non-inferiority testing of the same immunogenicity endpoint was used but with a narrower non-inferiority margin of a 1.5-fold decrease in phase III versus a 2.0-fold decrease that was used in phase IIB. With such a margin, a statistically significant non-inferiority finding would require the lower boundary of the 95% confidence interval for the difference in percentage points to be greater than –5%.</p></li>
+</ul>
+</section>
+</section>
+<section id="sample-size-re-assessment-design">
+<h3>3. Sample Size Re-Assessment Design<a class="headerlink" href="#sample-size-re-assessment-design" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Sample size re-assessment</p></td>
+<td><p>Re-estimate the target sample size or number of events during the trial to ensure the desired statistical power.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="case-study-9-4-valor-nct01191801">
+<h3>Case Study 9.4: VALOR (NCT01191801)<a class="headerlink" href="#case-study-9-4-valor-nct01191801" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Background</p></li>
+</ol>
+<ul class="simple">
+<li><p>Vosaroxin and Ara-c combination evaLuating Overall survival in Relapsed/refractory acute myeloid leukaemia (VALOR) was a phase III, double-blinded, adaptive randomised trial that evaluated vosaroxin + cytarabine versus placebo + cytarabine in patients with first relapsed or refractory acute myeloid leukaemia (AML) (NCT01191801).</p></li>
+<li><p>The relapsed or refractory AML has poor prognosis with median survival that is generally less than 1 year. Before VALOR began, a phase II trial on vosaroxin + cytarabine showed promising early results that supported the initiation of phase III evaluation.</p></li>
+<li><p><em><strong>While it is often the case that phase II data are used to plan phase III confirmatory trials, it is important to note that estimates from phase II can be subject to uncertainty.</strong></em> This makes planning difficult for phase III trials, especially when there are financial constraints.</p></li>
+<li><p>In this case study, we discuss how a method for adaptive sample size re-assessment called a ‘promising zone design’ developed by Mehta and Pocock was used to plan and execute VALOR.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Design and Methods</p></li>
+</ol>
+<ul class="simple">
+<li><p>VALOR is an event-driven randomised trial that randomised AML patients 1:1 to the vosaroxin arm or to the placebo. The primary endpoint was overall survival (OS) with the intention-to-treat principle being used as the primary analysis.</p></li>
+<li><p>The initial accrual target was set at 375 deaths in 450 patients based on available phase II data that suggested that an improvement in median OS from 5 months in the placebo group to 7 months in the treatment group could be expected. The initial target would provide 90% power at 5.0% two-sided type I error rate to detect such improvement, which translated to a hazard ratio (HR) of 0.71 (5/7 = 0.71).</p></li>
+<li><p>As part of a promising zone design, one interim analysis was planned after 173 events, approximately half of the targeted events (Table 9.3).</p></li>
+</ul>
+<p>Table 9.3</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Zone</p></th>
+<th class="head"><p>Threshold</p></th>
+<th class="head"><p>Possible decision options at interim analysis</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Efficacy zone</p></td>
+<td><p>One-side p-value of 0.0015 or lower (defined by O’Brien-Fleming boundary)</p></td>
+<td><p>Option 1A) Stop trial early for superiority</p></td>
+</tr>
+<tr class="row-odd"><td><p>Favourable zone</p></td>
+<td><p>Conditional power greater than 90%</p></td>
+<td><p>Option 2) Continue trial as planned</p></td>
+</tr>
+<tr class="row-even"><td><p>Promising zone</p></td>
+<td><p>Conditional power 30%-90%</p></td>
+<td><p>Option 3) Increase sample size and events by 50 %</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unfavoruable zone</p></td>
+<td><p>Conditional power 10-30%</p></td>
+<td><p>Option 2) Continue trial as planned</p></td>
+</tr>
+<tr class="row-even"><td><p>Futility zone</p></td>
+<td><p>Conditional power &lt; 10%</p></td>
+<td><p>Option 1B) Stop trial early for futility</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>In VALOR, conditional power with a maximum number of 562 events and sample size of 675 was calculated assuming the treatment effect observed at the interim was a true effect.</p></li>
+<li><p>If the conditional power was greater than 90%, the treatment was considered to be in the favourable zone where the trial could continue onto the initial target events and sample size.</p></li>
+<li><p>If the conditional fell between 30% and 90%, this was considered the promising zone where the target number of events and sample size would be increased by 50%.</p></li>
+<li><p>If the conditional power was between 10% and 30% (unfavourable zone), it did not warrant a sample size increase since the sample size would need to be increased beyond what is feasible to recruit to ensure adequate conditional power.</p></li>
+<li><p>If the conditional power was less than 10%, the trial could stop early for futility because the treatment would be a lost cause.</p></li>
+</ul>
+</section>
+<section id="response-adaptive-randomisation-design">
+<h3>4. Response Adaptive Randomisation Design<a class="headerlink" href="#response-adaptive-randomisation-design" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response adaptive randomisation</p></td>
+<td><p>The allocation ratio can be adjusted over time to favor the study group with the more favorable interim outcome (‘outcome’ adaptive randomization).</p></td>
+</tr>
+</tbody>
+</table>
+<section id="case-study-9-5-race-nct01665092">
+<h4>Case Study 9.5: RACE (NCT01665092)<a class="headerlink" href="#case-study-9-5-race-nct01665092" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Background</p></li>
+</ol>
+<ul class="simple">
+<li><p>The Rapid Administration of Carnitine in Sepsis (RACE) trial was a phase IIB, randomized, placebo-controlled clinical study designed with a Bayesian response-adaptive framework to evaluate the therapeutic potential of L-carnitine in patients experiencing septic shock (<a class="reference external" href="http://ClinicalTrials.gov">ClinicalTrials.gov</a> Identifier: NCT01665092).</p></li>
+<li><p>Based on evidence suggesting that L-carnitine may mitigate the hemodynamic disturbances associated with sepsis, the investigators proposed that early administration of L-carnitine as an adjunctive therapy in patients requiring vasopressors could reduce cumulative organ dysfunction within 48 hours, measured via the Sequential Organ Failure Assessment (SOFA) score, and improve 28-day survival.</p></li>
+<li><p>The study aimed to compare three different dosages of L-carnitine to placebo in order to determine the optimal dose for potential evaluation in a subsequent phase III trial.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Design and Methods</p></li>
+</ol>
+<ul class="simple">
+<li><p>Participants were randomly allocated to one of four groups: placebo or one of three L-carnitine dose levels—6 g, 12 g, or 18 g—administered intravenously over a 12-hour period. The primary outcome was the change in SOFA score from baseline to 48 hours, with negative changes indicating clinical improvement. A secondary endpoint included mortality at 28 days.</p></li>
+<li><p>The planned sample size was 250 patients, with approximately one-third consistently allocated to placebo, and the remaining participants assigned across the three treatment groups using response-adaptive randomisation. During the initial “burn-in” phase (the first 40 patients), equal allocation (1:1:1:1) was maintained across all groups.</p></li>
+<li><p>Thereafter, interim analyses occurred after every 12 enrolled patients, allowing the allocation ratios among the three active arms to be adjusted according to each dose’s evolving likelihood of being the most effective at improving SOFA scores.</p></li>
+</ul>
+<p>Table 9.4</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Adaptation</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Burn-in period:</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fixed allocation (1:1:1:1) for 40 patients</p></td>
+</tr>
+<tr class="row-even"><td><p>Post burn-in period:</p></td>
+</tr>
+<tr class="row-odd"><td><p>Interim analyses every 12 patients up to 250 patients or a stopping rule</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>The trial incorporated pre-specified stopping criteria. If no L-carnitine dose showed at least a 40% posterior probability of being superior to placebo in reducing SOFA scores, the study could be halted for futility.</p></li>
+</ul>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Stopping</p></th>
+<th class="head"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Response adaptive randomization</p></td>
+<td><p>~1/3 fixed allocation maintained to control <br> ~2/3 of allocation can be adapted to the best doseFootnote*</p></td>
+</tr>
+<tr class="row-odd"><td><p>Early stopping for futility</p></td>
+<td><p>&lt;40% posterior probability that the most promising dose leads to improvement in SOFA at 48 hours versus placebo</p></td>
+</tr>
+<tr class="row-even"><td><p>Early stopping for superiority</p></td>
+<td><p>&gt;90% posterior probability that the most promising dose leads to improvement in SOFA at 48 hours versus placebo &amp; &gt;70% predictive probability of successFootnote</p></td>
+</tr>
+</tbody>
+</table>
+<ul class="simple">
+<li><p>Conversely, if a dose exhibited both (1) over 90% posterior probability of benefit on SOFA score compared to placebo and (2) more than 70% predictive probability of achieving statistical significance for 28-day mortality in a future phase III trial (enrolling 2,000 patients in a 1:1 allocation), the study could be stopped early for superiority.</p></li>
+<li><p>A positive trial result required one or more doses to surpass a 90% posterior probability of benefit in SOFA reduction and a predictive probability of at least 30% for success in a subsequent phase III trial based on mortality. Simulation studies (30,000 iterations) were used to refine the design, ensuring desirable operating characteristics.</p></li>
+<li><p>These simulations estimated an overall type I error rate of 4.3% and a statistical power of 91.1% under a scenario where the treatment effects of the three L-carnitine doses were 0, –1, and –2 compared to placebo.</p></li>
+</ul>
+</section>
+</section>
+<section id="adaptive-enrichment-design">
+<h3>5. Adaptive Enrichment Design<a class="headerlink" href="#adaptive-enrichment-design" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adaptive enrichment design</p></td>
+<td><p>Potential modification of trial eligibility for narrower patient groups likely to benefit more from the indicated treatment.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="case-study-9-6-tappas-nct02979899">
+<h4>Case Study 9.6: TAPPAS (NCT02979899)<a class="headerlink" href="#case-study-9-6-tappas-nct02979899" title="Permalink to this heading">#</a></h4>
+<ol class="arabic simple">
+<li><p>Background</p></li>
+</ol>
+<ul class="simple">
+<li><p>The TAPPAS trial (Trc105 And Pazopanib versus Pazopanib Alone in Patients with Advanced Angiosarcoma) was a phase III, randomized controlled study that employed an adaptive enrichment design.</p></li>
+<li><p>Its objective was to evaluate whether the combination of carotuximab (Trc105) and pazopanib offered improved outcomes over pazopanib alone in patients with angiosarcoma.</p></li>
+<li><p>Prior exploratory research suggested that this drug combination might be particularly effective in patients with cutaneous angiosarcoma, prompting the use of an adaptive strategy in the TAPPAS trial.</p></li>
+<li><p>This design allowed for possible modifications to the enrolled population or sample size mid-trial, depending on emerging evidence from an interim analysis.</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>Design and Methods</p></li>
+</ol>
+<ul class="simple">
+<li><p>Participants were randomized in a 1:1 ratio to receive either carotuximab plus pazopanib or pazopanib alone.</p></li>
+<li><p>The randomization followed a stratified permuted block design with variable block sizes (2 or 4), and stratification factors included angiosarcoma subtype (cutaneous vs. non-cutaneous) and number of prior systemic treatments (0 vs. 1–2).</p></li>
+<li><p>The primary endpoint was progression-free survival (PFS), evaluated on an intention-to-treat basis.</p></li>
+<li><p>The original plan targeted 95 PFS events, with a total enrollment of 190 patients to provide 83% power at a two-sided alpha of 0.05.</p></li>
+<li><p>This was based on detecting a hazard ratio (HR) of 0.55, corresponding to an increase in median PFS from 4 to 7.27 months.</p></li>
+<li><p>To address potential heterogeneity in treatment response between subtypes, the study employed an adaptive enrichment framework.</p></li>
+<li><p>An interim analysis was scheduled to occur after 40 events or 30 days following the enrollment of the 120th participant, whichever came first.</p></li>
+<li><p>At that point, two conditional power metrics were calculated: one for the full study population (CP-full) and another restricted to patients with cutaneous angiosarcoma (CP-cutaneous).</p></li>
+<li><p>Based on these values, the trial could fall into one of four zones:</p></li>
+</ul>
+<p>Table 9.6: Decision rules for interim analysis in TAPPAS</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Zone</p></th>
+<th class="head"><p>Threshold</p></th>
+<th class="head"><p>Possible decision options</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Favourable zone</p></td>
+<td><p>CP-full &gt;95%</p></td>
+<td><p>Option 1) Continue as planned to 190 patients/95 events</p></td>
+</tr>
+<tr class="row-odd"><td><p>Promising zone</p></td>
+<td><p>CP-full 30-95%</p></td>
+<td><p>Option 2) Increase enrolment target from 190 patients/95 events to 340 patients/170 events</p></td>
+</tr>
+<tr class="row-even"><td><p>Enrichment zone</p></td>
+<td><p>CP-full &lt;30% and CP-cutaneous &gt;50%</p></td>
+<td><p>Option 3) Enrich and enrol 160 cutaneous patients only thereafter for a final analysis done at 110 events in the enriched group</p></td>
+</tr>
+<tr class="row-odd"><td><p>Unfavourable zone</p></td>
+<td><p>CP-full &lt;0% and CP-cutaneous &lt;= 50%</p></td>
+<td><p>Option 1) Continue as planned to 190 patients and 95 events</p></td>
+</tr>
+<tr class="row-even"><td><p>Futility zone</p></td>
+<td><p>Up to the judgment of the independent DSMB</p></td>
+<td><p>Option 4) End the trial for futility</p></td>
+</tr>
+</tbody>
+</table>
+<p>While there were no formal stopping rules for futility, the Data and Safety Monitoring Board (DSMB) retained the discretion to recommend halting the study if interim results suggested the treatment was underperforming compared to control.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Basket_and_Umbrella_Trials.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Basket Trials and Umbrella Trials</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Protocol_example_ppt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Protocol Example - ppt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#presenter-chungsoo-kim">Presenter : Chungsoo Kim</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-summary">Chapter Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#group-sequential-design">1. Group Sequential Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-1-musec-trial-nct00552604">Case Study 9.1: MUSEC Trial (NCT00552604)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#seamless-design">2. Seamless Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-3-broad-spectrum-hpv-vaccine-study-nct00543543">Case Study 9.3: Broad-Spectrum HPV Vaccine Study (NCT00543543)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size-re-assessment-design">3. Sample Size Re-Assessment Design</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-4-valor-nct01191801">Case Study 9.4: VALOR (NCT01191801)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#response-adaptive-randomisation-design">4. Response Adaptive Randomisation Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-5-race-nct01665092">Case Study 9.5: RACE (NCT01665092)</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adaptive-enrichment-design">5. Adaptive Enrichment Design</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-9-6-tappas-nct02979899">Case Study 9.6: TAPPAS (NCT02979899)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
