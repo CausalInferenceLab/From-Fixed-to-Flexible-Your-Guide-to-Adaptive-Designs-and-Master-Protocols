@@ -1,0 +1,735 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Case Studies of Platform Trials &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Case_Study_Platform_Trials';</script>
+    <link rel="shortcut icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Protocol Example - ppt" href="Protocol_example_ppt.html" />
+    <link rel="prev" title="Ch 9. Case Studies of Adaptive Trial Designs" href="Ch9_Case_Studies_of_Adaptive_Trial_Designs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History_of_clinical_trials.html">History of Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html">Characteristics and Principles of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch4_Common_Types.html">Ch 4. Common Types of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch5_Clinical%20_Trial_%20Simultaion.html">Chapter 5 - Clinical Trial Simulation</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Master_Protocols.html">Characteristics and Principles of Master Protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Platform_Trials.html">Platform Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basket_and_Umbrella_Trials.html">Basket Trials and Umbrella Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch9_Case_Studies_of_Adaptive_Trial_Designs.html">Ch 9. Case Studies of Adaptive Trial Designs</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Case Studies of Platform Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example_ppt.html">Protocol Example - ppt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example.html">Protocol Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues/new?title=Issue%20on%20page%20%2Fdocs/Case_Study_Platform_Trials.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Case_Study_Platform_Trials.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Case Studies of Platform Trials</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-1-stampede-nct00268476">Case Study 10.1: STAMPEDE (NCT00268476)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-methods">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#findings">3) Findings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-2-i-spy-2-nct01042379">Case Study 10.2: I-SPY 2 (NCT01042379)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3) Findings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-3-recovery-isrctn50189673-nct04381936">Case Study 10.3: RECOVERY (ISRCTN50189673 &amp; NCT04381936)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3) Findings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-4-together-nct04727424">Case Study 10.4: TOGETHER (NCT04727424)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3) Findings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section id="case-studies-of-platform-trials">
+<h1>Case Studies of Platform Trials<a class="headerlink" href="#case-studies-of-platform-trials" title="Permalink to this heading">#</a></h1>
+<p>Presenter : <a class="reference external" href="https://www.linkedin.com/in/shstat1729/">Sang Ho Park</a></p>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>This section provides four real-world examples of a flexible type of study called an “adaptive randomized platform trial,” showing how the ideas discussed earlier are used in practice.</p></li>
+<li><p>Systemic Therapy in Advancing or Metastatic Prostate Cancer: Evaluation of Drug Efficacy (STAMPEDE)</p></li>
+<li><p>Investigation of Serial studies to Predict Your Therapeutic Response with Imaging and Molecular Analysis 2(I-SPY 2)</p></li>
+<li><p>Randomised Evaluation of COVID-19 Therapy (RECOVERY); and TOGETHER.</p></li>
+<li><p>Key concept : Interventions that may not be prespecified in the protocol can be added or removed during clinical trials.</p></li>
+</ul>
+<section id="case-study-10-1-stampede-nct00268476">
+<h3>Case Study 10.1: STAMPEDE (NCT00268476)<a class="headerlink" href="#case-study-10-1-stampede-nct00268476" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Multi-arm, multi-stage</p></td>
+<td><p>This design tests multiple treatments against a single standard control group at the same time. Also, Interim analyses are conducted to stop the trial early.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="background">
+<h4>1) Background<a class="headerlink" href="#background" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Systemic Therapy in Advancing or Metastatic Prostate Cancer: Evaluation of Drug Efficacy (STAMPEDE; NCT00268476) is a multi-arm, multi-stage (MAMS) platform randomised trial. The STAMPEDE trial tests various new treatments for men with advanced prostate cancer who are also beginning standard hormone therapy (ADT).</p></li>
+<li><p>STAMPEDE was the first-ever platform trial, starting in the UK on July 8, 2005.</p></li>
+<li><p>The trial has been running for almost 20 years, testing 10 different treatments. Eight of these have been fully studied, and two are still being evaluated.</p></li>
+</ul>
+</section>
+<section id="design-and-methods">
+<h4>2) Design and Methods<a class="headerlink" href="#design-and-methods" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>STAMPEDE is an adaptive, seamless phase IIB/III, MAMS, platform randomised trial. For each new drug, there are three scheduled interim analyses to stop early if the drug isn’t working (futility), followed by a final review.</p></li>
+<li><p>The interim analyses are based on failure-free survival (FFS), whereas the final analysis is based on overall survival (OS).</p></li>
+<li><p>The timing of these interim analyses is determined by reaching a specific number of “events” (like cancer progression), not by a set date. For example, the first check happens after 114 FFS events, the second after 214, and the third after 334.</p></li>
+<li><p>The final analysis, if required, uses a one-sided significance level of 0.025 based on OS. The overall one-sided type I error across the four analyses for the pairwise comparisons was calculated at approximately 0.013.</p></li>
+</ul>
+</section>
+<section id="findings">
+<h4>3) Findings<a class="headerlink" href="#findings" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The trial initially started in 2005 with six groups: five new treatments being tested against one standard control group.</p></li>
+<li><p>Decisions to add new treatments to the trial were based on both scientific evidence and practical factors.</p></li>
+<li><p>A major discovery was that adding the drug docetaxel to the standard treatment helped prostate cancer patients live longer, significantly reducing the risk of cancer progression and death compared to the control group. In comparison to the control group, the docetaxel arm showed an HR of 0.61 (95% CI: 0.53, 0.70) for FFS and 0.78 (95% CI: 0.66, 0.93) for overall survival.</p></li>
+<li><p>Because of this result, the standard treatment within the STAMPEDE trial itself was changed to include docetaxel.</p></li>
+</ul>
+</section>
+</section>
+<section id="case-study-10-2-i-spy-2-nct01042379">
+<h3>Case Study 10.2: I-SPY 2 (NCT01042379)<a class="headerlink" href="#case-study-10-2-i-spy-2-nct01042379" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Bayesian, adaptive platform randomised trial with a response adaptive randomisation design</p></td>
+<td><p>Phase IIB trial conducted with an overall goal of identifying candidate-targeted therapies for a given molecular trait (biomarker signature) for future phase III evaluation.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id1">
+<h4>1) Background<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Investigation of Serial studies to Predict Your Therapeutic Response with Imaging and Molecular Analysis 2 (I-SPY2; NCT01042379) is a highly regarded and influential example of an adaptive platform trial that began before the COVID-19 pandemic.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h4>2) Design and Methods<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>I-SPY 2 is a biomarker-guided trial that used biomarker information for eligibility criteria, stratified randomisation, and assessment of efficacy</p></li>
+<li><p>Biomarker information on estrogen receptor (ER), progesterone receptor (PR),
+human epidermal growth factor receptor 2 (HER2), and MammaPrint scoring (a score based on the activity of 70 genes related to breast cancer) are used as eligibility standards to recruit high-risk breast cancer patients into the study.</p></li>
+<li><p>Information on HR (positive vs. negative), HER2 (positive vs negative), and MammaPrint scores (high vs. low) were used to create 8=( 2 × 2 × 2) strata for stratified randomisation, and the same information was used to create 10 biomarker signatures in which each experimental intervention would be assessed for efficacy.</p></li>
+<li><p>In I-SPY 2, patients with HER2 negative tumours would receive 12 weekly cycles of paclitaxel followed by 4 cycles of doxorubicin and cyclophosphamide every 2 to 3 weeks as standard-of-care. Patients with HER2 positive tumours, on the other hand, would receive 12 weekly cycles of paclitaxel and trastuzumab, followed by 4 cycles of doxorubicin and cyclophosphamide.</p></li>
+<li><p>Primary outcome of pathological complete response (CR)</p></li>
+<li><p>In each of the 10 signatures, new drugs were added to standard chemotherapy and compared against the standard chemotherapy by itself.</p></li>
+<li><p>Whether a drug graduated or was dropped depended on how well it worked in the 10 signatures. In each signature, 20% of patients got the control treatment, while the other 80% were assigned to new treatments in a way that favored the more promising drugs as results came in.</p></li>
+<li><p>The decision rules for superiority and futility were based on Bayesian predictive probability of being successful in a future phase III trial that is calculated assuming a randomised clinical trial with an equal allocation of 300 patients.</p></li>
+<li><p>The decision rule for superiority (graduation), defined as a sufficiently high level (85%) of predictive probability for a given biomarker signature, could be made when at least 60 patients are assigned to that therapy. The decision rule for futility, defined by predictive probability that is less than 10% in all 10 signatures for a given therapy, could be made when there are at least 20 patients assigned to the therapy.</p></li>
+</ul>
+</section>
+<section id="id3">
+<h4>3) Findings<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Since it began in 2010, the I-SPY 2 trial has tested nearly 30 different treatments.</p></li>
+<li><p>For example, the drug combination veliparib-carboplatin was graduated for triple-negative breast cancer in 2013 because it showed a very high (88%) predicted chance of succeeding in a future III trial.</p></li>
+</ul>
+</section>
+</section>
+<section id="case-study-10-3-recovery-isrctn50189673-nct04381936">
+<h3>Case Study 10.3: RECOVERY (ISRCTN50189673 &amp; NCT04381936)<a class="headerlink" href="#case-study-10-3-recovery-isrctn50189673-nct04381936" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Large platform randomised trial has evaluated multiple different interventions</p></td>
+<td><p>For hospitalized COVID-19 patients, comparing them to the usual standard treatment in hundreds of UK hospitals.</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id4">
+<h4>1) Background<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>Randomised Evaluation of COVID-19 Therapy (RECOVERY; ISRCTN50189673 &amp;NCT04381936) is one of the most well-known clinical studies conducted during the COVID-19 pandemic.</p></li>
+<li><p>The trial enrolled over 12,000 patients with incredible speed, taking only about four months from its start to the time it announced dexamethasone as a life-saving treatment.</p></li>
+</ul>
+</section>
+<section id="id5">
+<h4>2) Design and Methods<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>RECOVERY is an adaptive, open-label platform randomised trial with a factorial design.</p></li>
+<li><p>Because there was little information at the start of the pandemic, the sample size wasn’t fixed; instead, an expert committee monitored enrollment in a blind fashion.</p></li>
+<li><p>Based on intention-to-treat (as-randomised) principle, the primary analysis involves a pairwise comparison against a concurrent control arm based on 28-day mortality status (yes or no). No formal statistical rules are used.</p></li>
+</ul>
+</section>
+<section id="id6">
+<h4>3) Findings<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>On 5 June 2020, the RECOVERY trial announced the decision to discontinue the evaluation of hydroxychloroquine (HCQ) due to lack of clinical efficacy. When data from 1,542 patients randomised to HCQ were compared to 3,132 patients randomised to the control group, HCQ did not demonstrate any clinical benefits on 28-day mortality (23.5% in the control group vs. 25.7% in the HCQ group) showing an HR of 1.11 (95% CI: 0.98, 1.26).</p></li>
+<li><p>On 2 June 2020, the RECOVERY trial published preliminary report findings on low-dose dexamethasone (6 mg once daily for 10 days) as a preprint. The peer-reviewed results became available shortly thereafter. This analysis for dexamethasone included data from 2,104 patients who were randomised to dexamethasone and 4,321 patients who were randomised to the control group. For the overall population, dexamethasone showed age-adjusted relative risk (RR) of 0.83 (95% CI: 0.74, 0.92) for 28-day mortality in comparison to the control group (mortality rate of 21.6% in dexamethasone and 24.6% in the control group).</p></li>
+<li><p>For instance, dexamethasone did not demonstrate any mortality reduction benefits among patients who did not receive any ventilation support (RR: 1.22; 95% CI: 0.93, 1.61), but for patients who received non-invasive ventilation (RR: 0.80; 95% CI: 0.70, 0.92) and invasive mechanical ventilation (RR: 0.65; 95% CI: 0.51, 0.82), there were important mortality reduction benefits from dexamethasone.</p></li>
+</ul>
+</section>
+</section>
+<section id="case-study-10-4-together-nct04727424">
+<h3>Case Study 10.4: TOGETHER (NCT04727424)<a class="headerlink" href="#case-study-10-4-together-nct04727424" title="Permalink to this heading">#</a></h3>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Design types</p></th>
+<th class="head"><p>Details</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Adaptive randomised platform trial</p></td>
+<td><p>To evaluate re-purposed therapies among symptomatic Brazilian adults with COVID-19 at high risk for hospitalisation</p></td>
+</tr>
+</tbody>
+</table>
+<section id="id7">
+<h4>1) Background<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>TOGETHER (NCT04727424) is an outpatient adaptiverandomised platform trial to evaluate re-purposed therapies among symptomatic Brazilian adults with COVID-19 at high risk for hospitalisation.</p></li>
+<li><p>The TOGETHER trial is an outpatient trial with trial sites in the state of Minas Gerais in Brazil. The TOGETHER trial consists of a network of investigators affiliated with academic institutions in Brazil, Canada, and the United States and partnership with contracted research organisations providing data management and analytical support. At the time of writing, it currently has included 1 interventions, with 6 interventions having been completed for evaluation.</p></li>
+</ul>
+</section>
+<section id="id8">
+<h4>2) Design and Methods<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>In the TOGETHER trial, patients presenting to an outpatient clinical setting with presumptive diagnosis of COVID-19 undergo a reverse transcriptase-polymerase chain reaction (RT-PCR) or a rapid antigen test to confirm a positive diagnosis.</p></li>
+<li><p>Patients who qualified were randomly assigned with equal probability to one of the active treatment groups. The main goal was to see if a treatment prevented hospitalization (or extended emergency care) within 28 days of starting the study. The pairwise comparison against the common concurrent control is used as the primary analysis based on the intention-to-treat principle.</p></li>
+<li><p>This trial uses sequential designs and sample size re-assessment procedures under the Bayesian statistical framework.</p></li>
+<li><p>For the latest results on fluvoxamine, the initial target sample size was 681 participants per arm. This was planned assuming a control event rate of 15% and a relative risk reduction (RRR) of 37.5% set as a minimally clinical important difference (MCID) to achieve 80% statistical power with 0.05 two-sided type 1 error.</p></li>
+</ul>
+</section>
+<section id="id9">
+<h4>3) Findings<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h4>
+<ul class="simple">
+<li><p>The trial showed that drugs like hydroxychloroquine and ivermectin were not effective. However, it found that the drug fluvoxamine did help reduce hospitalization for high-risk patients who were treated soon after their diagnosis.</p></li>
+<li><p>Between 20 January and 5 August 2021, 741 patients were randomly assigned to fluvoxamine and 756 into the concurrent placebo control arm. In comparison to the placebo, the proportion ofpatients who were hospitalised was lower for the fluvoxamine group compared with placebo. Eleven per cent of patients assigned to fluvoxamine (n= 79/741) became hospitalised, whereas 16% of patients assigned to the control (n = 119/756) became hospitalised. Fluvoxamine had a 99.8% probability ofsuperiority versus the placebo with a relative risk of 0.68 (95% CI: 0.52, 0.88) in terms of the composite hospitalisation endpoint.</p></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Ch9_Case_Studies_of_Adaptive_Trial_Designs.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Ch 9. Case Studies of Adaptive Trial Designs</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Protocol_example_ppt.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Protocol Example - ppt</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-1-stampede-nct00268476">Case Study 10.1: STAMPEDE (NCT00268476)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#background">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#design-and-methods">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#findings">3) Findings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-2-i-spy-2-nct01042379">Case Study 10.2: I-SPY 2 (NCT01042379)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">3) Findings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-3-recovery-isrctn50189673-nct04381936">Case Study 10.3: RECOVERY (ISRCTN50189673 &amp; NCT04381936)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">3) Findings</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-study-10-4-together-nct04727424">Case Study 10.4: TOGETHER (NCT04727424)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">1) Background</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">2) Design and Methods</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">3) Findings</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
