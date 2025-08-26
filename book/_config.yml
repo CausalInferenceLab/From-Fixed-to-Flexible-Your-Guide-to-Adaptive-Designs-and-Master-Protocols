@@ -1,10 +1,10 @@
-title : From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols
+title : From Fixed to Flexible Your Guide to Adaptive Designs and Master Protocols
 author: PseudoLab
 logo: 'PseudoLab_logo.png'
 
 # Short description about the book
 description: >-
-  A Brief Introduction to From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols.
+  A Brief Introduction to From Fixed to Flexible Your Guide to Adaptive Designs and Master Protocols.
 
 execute:
   execute_notebooks           : cache
