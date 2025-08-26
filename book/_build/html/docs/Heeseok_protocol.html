@@ -1,0 +1,733 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>PCD Protocol &#8212; Bridging causal inference and real-world evidence</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Heeseok_protocol';</script>
+    <link rel="icon" href="../_static/PseudoLab_logo.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/PseudoLab_logo.png" class="logo__image only-light" alt="Bridging causal inference and real-world evidence - Home"/>
+    <script>document.write(`<img src="../_static/PseudoLab_logo.png" class="logo__image only-dark" alt="Bridging causal inference and real-world evidence - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intro_to_clinical_research.html">Introduction to Clinical Trial Research</a></li>
+<li class="toctree-l1"><a class="reference internal" href="History_of_clinical_trials.html">History of Clinical Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Adaptive_Trial_Designs.html">Characteristics and Principles of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch4_Common_Types.html">Ch 4. Common Types of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch5_Clinical%20_Trial_%20Simultaion.html">Chapter 5 - Clinical Trial Simulation</a></li>
+
+
+
+
+<li class="toctree-l1"><a class="reference internal" href="Characteristics_and_Principles_of_Master_Protocols.html">Characteristics and Principles of Master Protocols</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Platform_Trials.html">Platform Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Basket_and_Umbrella_Trials.html">Basket Trials and Umbrella Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch9_Case_Studies_of_Adaptive_Trial_Designs.html">Ch 9. Case Studies of Adaptive Trial Designs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Case_Study_Platform_Trials.html">Case Studies of Platform Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Ch11_Case_study_basket_umbrella_trials.html">Chapter 11: Case Studies of Basket and Umbrella Trials</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example_ppt.html">Protocol Example - ppt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Protocol_example.html">Protocol Example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-example.html">markdown 예시</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/CausalInferenceLab/From-Fixed-to-Flexible-Your-Guide-to-Adaptive-Designs-and-Master-Protocols/issues/new?title=Issue%20on%20page%20%2Fdocs/Heeseok_protocol.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/docs/Heeseok_protocol.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>PCD Protocol</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writer-heeseok-yoo">Writer : HeeSeok Yoo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-extubation-dexmedetomidine-switch-strategy-pedss-a-master-protocol-with-thoracic-surgery-ards-and-sepsis">Pre-Extubation Dexmedetomidine Switch Strategy(PEDSS) — A Master Protocol with Thoracic Surgery, ARDS, and Sepsis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administrative-information">Administrative Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-and-rationale">Background and Rationale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evidence-base-including-propofol-long-term-safety">Evidence base (including propofol long-term safety)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis">Hypothesis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-design">Trial Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#participants">Participants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inclusion-criteria">Inclusion criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusion-criteria">Exclusion criteria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">Interventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-a-standard-care">Arm A (Standard Care)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-b-switch-strategy">Arm B (Switch Strategy)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-to-both-arms">Common to both arms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outcomes">Outcomes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-endpoint">Primary endpoint:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-endpoints">Secondary endpoints:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size">Sample Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management-and-statistical-analysis">Data Management and Statistical Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety">Safety</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics">Ethics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendices">Appendices</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="pcd-protocol">
+<h1>PCD Protocol<a class="headerlink" href="#pcd-protocol" title="Link to this heading">#</a></h1>
+<section id="writer-heeseok-yoo">
+<h2>Writer : <a class="reference external" href="https://www.linkedin.com/in/hee-seok-yoo-763999245/">HeeSeok Yoo</a><a class="headerlink" href="#writer-heeseok-yoo" title="Link to this heading">#</a></h2>
+</section>
+<section id="pre-extubation-dexmedetomidine-switch-strategy-pedss-a-master-protocol-with-thoracic-surgery-ards-and-sepsis">
+<h2>Pre-Extubation Dexmedetomidine Switch Strategy(PEDSS) — A Master Protocol with Thoracic Surgery, ARDS, and Sepsis<a class="headerlink" href="#pre-extubation-dexmedetomidine-switch-strategy-pedss-a-master-protocol-with-thoracic-surgery-ards-and-sepsis" title="Link to this heading">#</a></h2>
+</section>
+<section id="administrative-information">
+<h2>Administrative Information<a class="headerlink" href="#administrative-information" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Title: Pre-Extubation Dexmedetomidine Switch Strategy(PEDSS) — A Master Protocol with Thoracic Surgery, ARDS, and Sepsis</p></li>
+<li><p>Trial registration: (<a class="reference external" href="http://ClinicalTrials.gov">ClinicalTrials.gov</a>)[<a class="reference external" href="http://ClinicalTrials.gov">ClinicalTrials.gov</a>]</p></li>
+<li><p>Protocol version: Ver 1.0</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<section id="background-and-rationale">
+<h3>Background and Rationale<a class="headerlink" href="#background-and-rationale" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Sedation strategies prior to extubation impact delirium incidence, reintubation rates, and recovery speed.</p></li>
+<li><p>Propofol plus opioid (e.g., remifentanil) is common in ICUs but is associated with risks of respiratory depression, increased delirium risk, and delayed recovery.</p></li>
+<li><p>Dexmedetomidine (Precedex) produces cooperative/light sedation with minimal respiratory depression, and may reduce delirium risk when substituted for propofol prior to extubation.</p></li>
+<li><p>This platform–basket design aims to evaluate this switch strategy across distinct patient populations (thoracic surgery, ARDS, sepsis) and test a common primary hypothesis while exploring heterogeneity of treatment effect.</p></li>
+</ul>
+</section>
+<section id="evidence-base-including-propofol-long-term-safety">
+<h3>Evidence base (including propofol long-term safety)<a class="headerlink" href="#evidence-base-including-propofol-long-term-safety" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Propofol is widely used due to its rapid onset, short duration, and titratability.</p></li>
+<li><p>However, prolonged high-dose use (days to weeks) carries risk of Propofol Infusion Syndrome (PIS), which can cause heart failure, metabolic acidosis, hyperkalemia, rhabdomyolysis, renal failure, and hepatic dysfunction.</p></li>
+<li><p>Other rare adverse effects include hypertriglyceridemia, pancreatitis, and metabolic derangements.</p></li>
+<li><p>Short-term use (24–72 h) at standard doses is associated with very low rates of severe adverse effects, and is considered safe in current international ICU sedation guidelines.</p></li>
+<li><p>In this trial, the control arm will generally involve ≤48 h of propofol at standard doses; PIS and other serious adverse events are expected to be extremely rare, but safety monitoring will include hemodynamic parameters, metabolic markers, and CK.</p></li>
+</ul>
+</section>
+<section id="hypothesis">
+<h3>Hypothesis<a class="headerlink" href="#hypothesis" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The Precedex switch arm will have a lower incidence of delirium within 72 h after extubation compared to the standard arm.</p></li>
+</ul>
+</section>
+</section>
+<section id="objectives">
+<h2>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Primary objective: To compare the incidence of delirium (CAM-ICU) within 72h post-extubation between groups.</p></li>
+<li><p>Secondary objectives: To compare reintubation rates, ICU length of stay (LOS), ventilator-free days at day 28 (VFD-28), pain/sedation target achievement, cumulative opioid use, safety, and laboratory changes.</p></li>
+</ul>
+</section>
+<section id="trial-design">
+<h2>Trial Design<a class="headerlink" href="#trial-design" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Multicenter, three-basket (thoracic surgery / ARDS / sepsis) platform</p></li>
+<li><p>Two-arm randomized controlled trial, open-label treatment, blinded outcome assessment</p></li>
+<li><p>Stratified randomization by basket, site, age, and sex</p></li>
+<li><p>Primary analysis at platform level; exploratory basket-specific analyses with FDR adjustment</p></li>
+</ul>
+</section>
+<section id="participants">
+<h2>Participants<a class="headerlink" href="#participants" title="Link to this heading">#</a></h2>
+<section id="inclusion-criteria">
+<h3>Inclusion criteria<a class="headerlink" href="#inclusion-criteria" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Age ≥60 years, invasive mechanical ventilation, ≥24h of propofol + remifentanil sedation</p></li>
+<li><p>Planned extubation within 24h</p></li>
+<li><p>Sedation target RASS -2 to 0</p></li>
+</ul>
+</section>
+<section id="exclusion-criteria">
+<h3>Exclusion criteria<a class="headerlink" href="#exclusion-criteria" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>HR &lt;40 bpm, high-grade AV block, uncorrectable MAP &lt;55 mmHg</p></li>
+<li><p>Severe hepatic impairment</p></li>
+<li><p>Inability to assess CAM-ICU, terminal care plan in place</p></li>
+<li><p>Deemed unsuitable by investigator</p></li>
+</ul>
+</section>
+</section>
+<section id="interventions">
+<h2>Interventions<a class="headerlink" href="#interventions" title="Link to this heading">#</a></h2>
+<section id="arm-a-standard-care">
+<h3>Arm A (Standard Care)<a class="headerlink" href="#arm-a-standard-care" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Propofol at institutional standard rate + remifentanil</p></li>
+<li><p>Continued until extubation</p></li>
+</ul>
+</section>
+<section id="arm-b-switch-strategy">
+<h3>Arm B (Switch Strategy)<a class="headerlink" href="#arm-b-switch-strategy" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>6–12h before planned extubation, stop propofol and initiate dexmedetomidine (0.2–0.7 µg/kg/h, no loading dose)</p></li>
+<li><p>Adjust to RASS -2 to 0</p></li>
+<li><p>Maintain remifentanil at minimal effective dose</p></li>
+</ul>
+</section>
+<section id="common-to-both-arms">
+<h3>Common to both arms<a class="headerlink" href="#common-to-both-arms" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Rescue benzodiazepine use minimized</p></li>
+<li><p>Stepwise dose reduction and stopping rules for hypotension/bradycardia</p></li>
+<li><p>Analgesia-first approach</p></li>
+</ul>
+</section>
+</section>
+<section id="outcomes">
+<h2>Outcomes<a class="headerlink" href="#outcomes" title="Link to this heading">#</a></h2>
+<section id="primary-endpoint">
+<h3>Primary endpoint:<a class="headerlink" href="#primary-endpoint" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Delirium within 72h post-extubation (≥1 positive CAM-ICU assessment)</p></li>
+</ul>
+</section>
+<section id="secondary-endpoints">
+<h3>Secondary endpoints:<a class="headerlink" href="#secondary-endpoints" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Reintubation rate (24h, 48h), ICU LOS, VFD-28</p></li>
+<li><p>Sedation target achievement (RASS), SAT/SBT performance</p></li>
+<li><p>Cumulative opioid dose (morphine equivalents)</p></li>
+<li><p>Safety (AEs, SAEs), lab changes (CRP, cortisol, LFTs, BUN/Cr)</p></li>
+</ul>
+</section>
+</section>
+<section id="sample-size">
+<h2>Sample Size<a class="headerlink" href="#sample-size" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Control delirium rate 35%, intervention 25% (absolute reduction 10%); α=0.05, 1–β=0.80 → 325 per arm</p></li>
+<li><p>Allowing 10% dropout: 360 per arm, total 720 participants</p></li>
+</ul>
+</section>
+<section id="data-management-and-statistical-analysis">
+<h2>Data Management and Statistical Analysis<a class="headerlink" href="#data-management-and-statistical-analysis" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>eCRF compliant with 21 CFR Part 11</p></li>
+<li><p>Primary analysis: logistic regression (group, basket, site; covariates: age, sex, severity)</p></li>
+<li><p>Time-to-event: Kaplan–Meier / Cox regression</p></li>
+<li><p>Missing data: multiple imputation</p></li>
+<li><p>Interaction analyses: Bonferroni / FDR adjustment</p></li>
+</ul>
+</section>
+<section id="safety">
+<h2>Safety<a class="headerlink" href="#safety" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>DSMB oversight, stopping rules in place</p></li>
+<li><p>Standard safety monitoring including CK, lipids, acid–base status (for early PIS detection)</p></li>
+<li><p>Suspected PIS: immediate protocol discontinuation, treatment change</p></li>
+</ul>
+</section>
+<section id="ethics">
+<h2>Ethics<a class="headerlink" href="#ethics" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>IRB approval at all sites prior to initiation</p></li>
+<li><p>Deferred consent permitted per institutional SOP</p></li>
+<li><p>Data confidentiality maintained via de-identification and encryption</p></li>
+<li><p>Compensation for study drug-related injury as per institutional policy</p></li>
+</ul>
+</section>
+<section id="appendices">
+<h2>Appendices<a class="headerlink" href="#appendices" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Participant flow diagram</p></li>
+<li><p>Assessment schedule (Gantt chart)</p></li>
+<li><p>Drug titration and reduction algorithm</p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#writer-heeseok-yoo">Writer : HeeSeok Yoo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#pre-extubation-dexmedetomidine-switch-strategy-pedss-a-master-protocol-with-thoracic-surgery-ards-and-sepsis">Pre-Extubation Dexmedetomidine Switch Strategy(PEDSS) — A Master Protocol with Thoracic Surgery, ARDS, and Sepsis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#administrative-information">Administrative Information</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#background-and-rationale">Background and Rationale</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#evidence-base-including-propofol-long-term-safety">Evidence base (including propofol long-term safety)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#hypothesis">Hypothesis</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#trial-design">Trial Design</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#participants">Participants</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inclusion-criteria">Inclusion criteria</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exclusion-criteria">Exclusion criteria</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#interventions">Interventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-a-standard-care">Arm A (Standard Care)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#arm-b-switch-strategy">Arm B (Switch Strategy)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#common-to-both-arms">Common to both arms</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#outcomes">Outcomes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-endpoint">Primary endpoint:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#secondary-endpoints">Secondary endpoints:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-size">Sample Size</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-management-and-statistical-analysis">Data Management and Statistical Analysis</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#safety">Safety</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ethics">Ethics</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#appendices">Appendices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By PseudoLab
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
