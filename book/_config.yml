@@ -1,10 +1,10 @@
-title : Bridging causal inference and real-world evidence
+title : From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols
 author: PseudoLab
 logo: 'PseudoLab_logo.png'
 
 # Short description about the book
 description: >-
-  A Brief Introduction to Causal Inference and Real-World Evidence Guidelines.
+  A Brief Introduction to From Fixed to Flexible: Your Guide to Adaptive Designs and Master Protocols.
 
 execute:
   execute_notebooks           : cache
